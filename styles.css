@@ -1,0 +1,63 @@
+/* SPACING SYSTEM (px)
+      2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+      FONT SIZE SYSTEM (px)
+      10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1;
+}
+
+body {
+  font-family: "Aleo", serif;
+  color: #2c2c2c;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+}
+
+.header {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+}
+
+.content {
+  display: flex;
+  gap: 16px;
+}
+
+#sidebar {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.location {
+  justify-items: center;
+}
+
+#map {
+  flex: 8 0 auto;
+  height: 96vh;
+}
+
+/* Pop Up Audio Player */
+
+.audio {
+  display: block;
+}
