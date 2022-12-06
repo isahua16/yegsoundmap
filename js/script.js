@@ -13,7 +13,9 @@ $(document).ready(function () {
   bounds = L.latLngBounds(corner1, corner2);
 
   //Map init
-  map = L.map("map").setView([53.5461, -113.4937], 11).setMaxBounds(bounds);
+  map = L.map("map", { attributionControl: false })
+    .setView([53.5461, -113.4937], 11)
+    .setMaxBounds(bounds);
 
   //Background Layer
   tile = L.tileLayer(

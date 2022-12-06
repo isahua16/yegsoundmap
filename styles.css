@@ -38,6 +38,7 @@ body {
 .content {
   display: flex;
   gap: 16px;
+  height: 96vh;
 }
 
 #sidebar {
@@ -45,6 +46,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  overflow: auto;
 }
 
 .location {
@@ -52,12 +54,28 @@ body {
 }
 
 #map {
-  flex: 8 0 auto;
-  height: 96vh;
+  flex: 1 1 65%;
+  overflow: hidden;
 }
 
 /* Pop Up Audio Player */
 
 .audio {
   display: block;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .content {
+    flex-direction: column;
+  }
+
+  #map {
+    flex: 1 1 65%;
+  }
+
+  #sidebar {
+    flex: 1 1 auto;
+  }
 }
