@@ -8,11 +8,9 @@ let corner1,
   tile,
   myIcon,
   geojsonLayer,
-  popupLayer,
   pop,
   btn,
   marker,
-  popup,
   data;
 
 ////////////////////////////////////////////////////////////////////////////////////////
