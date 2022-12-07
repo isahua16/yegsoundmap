@@ -7,11 +7,13 @@ let corner1,
   map,
   tile,
   myIcon,
-  zoomBtn,
   geojsonLayer,
+  popupLayer,
   pop,
   btn,
-  marker;
+  marker,
+  popup,
+  data;
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -40,46 +42,59 @@ $(document).ready(function () {
     iconSize: [20, 20],
   });
 
+  data = "data/attractions.geojson";
+
   // Add GeoJSON layer
-  geojsonLayer = new L.GeoJSON.AJAX("data/attractions.geojson", {
-    pointToLayer: function (feature, latlng) {
-      //Add a button for each feature
-      btn = `<button id="zoomTo` + feature.properties.name.replace(/ /g, "");
-      btn += `" class="location">`;
-      btn += feature.properties.name + `</button>`;
-      $("#sidebar").append(btn);
-
-      //Zoom to marker when clicking button
-      $("#zoomTo" + feature.properties.name.replace(/ /g, "")).click(
-        function () {
-          map.setView([latlng.lat, latlng.lng], 17);
-        }
-      );
-
-      // Add a custom popup for each feature
-      pop = `<h3>` + feature.properties.name + `</h3><br>`;
-      pop +=
-        `<audio class="audio"
-        controls
-        controlslist="nodownload noremoteplayback noplaybackrate"
-        src="` +
-        feature.properties.audio +
-        `">
-        <a href="` +
-        feature.properties.audio +
-        `"></a>
-        </audio>`;
-
-      marker = L.marker(latlng, { icon: myIcon }).bindPopup(pop);
-      marker.on("popupopen", function () {
-        map.setView([latlng.lat, latlng.lng], 17);
-      });
-
-      return marker;
-    },
+  geojsonLayer = new L.GeoJSON.AJAX(data, {
+    pointToLayer: myCreateEachMarkerFunction,
+    onEachFeature: myOnEachFeatureFunction,
   });
+
   geojsonLayer.addTo(map);
 });
+
+// Create markers from GeoJson
+function myCreateEachMarkerFunction(feature, latlng) {
+  btn = `<button id="zoomTo` + feature.properties.name.replace(/ /g, "");
+  btn += `" class="location">`;
+  btn += feature.properties.name + `</button>`;
+  $("#sidebar").append(btn);
+
+  //Add Zoom buttons for each feature
+  $("#zoomTo" + feature.properties.name.replace(/ /g, "")).click(function () {
+    map.setView([latlng.lat, latlng.lng], 17);
+    map.openPopup(setPopupContent(feature), latlng);
+  });
+
+  marker = L.marker(latlng, { icon: myIcon });
+
+  marker.on("popupopen", function () {
+    map.setView([latlng.lat, latlng.lng], 17);
+  });
+
+  return marker;
+}
+
+function myOnEachFeatureFunction(feature, layer) {
+  layer.bindPopup(setPopupContent(feature));
+}
+
+function setPopupContent(feature) {
+  return (
+    `<h3>` +
+    feature.properties.name +
+    `</h3><br><audio class="audio"
+      controls
+      controlslist="nodownload noremoteplayback noplaybackrate"
+      src="` +
+    feature.properties.audio +
+    `">
+      <a href="` +
+    feature.properties.audio +
+    `"></a>
+      </audio>`
+  );
+}
 
 //////////////////////////////////////////////////////////////
 
