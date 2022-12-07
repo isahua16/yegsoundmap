@@ -1,7 +1,17 @@
 "use strict;";
 
 //variables
-let corner1, corner2, bounds, map, tile, myIcon, zoomBtn, geojsonLayer, str;
+let corner1,
+  corner2,
+  bounds,
+  map,
+  tile,
+  myIcon,
+  zoomBtn,
+  geojsonLayer,
+  pop,
+  btn,
+  marker;
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -30,16 +40,25 @@ $(document).ready(function () {
     iconSize: [20, 20],
   });
 
-  //Sidebar Button Zoom
-  zoomBtn = $("#zoomToLocation").on("click", function () {
-    map.setView([53.519794596542546, -113.49060757891392], 17);
-  });
-
   // Add GeoJSON layer
   geojsonLayer = new L.GeoJSON.AJAX("data/attractions.geojson", {
     pointToLayer: function (feature, latlng) {
-      str = `<h3>` + feature.properties.name + `</h3><br>`;
-      str +=
+      //Add a button for each feature
+      btn = `<button id="zoomTo` + feature.properties.name.replace(/ /g, "");
+      btn += `" class="location">`;
+      btn += feature.properties.name + `</button>`;
+      $("#sidebar").append(btn);
+
+      //Zoom to marker when clicking button
+      $("#zoomTo" + feature.properties.name.replace(/ /g, "")).click(
+        function () {
+          map.setView([latlng.lat, latlng.lng], 17);
+        }
+      );
+
+      // Add a custom popup for each feature
+      pop = `<h3>` + feature.properties.name + `</h3><br>`;
+      pop +=
         `<audio class="audio"
         controls
         controlslist="nodownload noremoteplayback noplaybackrate"
@@ -50,35 +69,20 @@ $(document).ready(function () {
         feature.properties.audio +
         `"></a>
         </audio>`;
-      return L.marker(latlng, { icon: myIcon }).bindPopup(str);
+
+      marker = L.marker(latlng, { icon: myIcon }).bindPopup(pop);
+      marker.on("popupopen", function () {
+        map.setView([latlng.lat, latlng.lng], 17);
+      });
+
+      return marker;
     },
   });
   geojsonLayer.addTo(map);
 });
 
-////////////////////////////////////////////////////////////////////////////////////////
-//Create a marker (and bind a popup directly)
+//////////////////////////////////////////////////////////////
 
-// const marker = L.marker([53.519794596542546, -113.49060757891392], {
-//   icon: myIcon,
-// })
-//   .bindPopup(
-//     `
-//     <h3>Holy Trinity Anglican Church Walla</h3>
-//     <br>
-//     <audio class="audio"
-//       controls
-//       controlslist="nodownload noremoteplayback noplaybackrate"
-//       src="media/Walla_church_echo_inside_english_large_isael.wav"
-//     >
-//       <a href="media/Walla_church_echo_inside_english_large_isael.wav"></a>
-//     </audio>
-//     `
-//   )
-//   .addTo(map)
-//   .openPopup();
-
-////////////////////////////////////////////////////////////////////////////////////////
 //Create a marker on map click
 /* 
           function onMapClick(event) {
@@ -88,4 +92,4 @@ $(document).ready(function () {
           map.on("click", onMapClick);
           */
 
-////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////

@@ -23,8 +23,8 @@
       "type": "Feature",
       "properties": {
         "id": 2,
-        "name": "Holy Trinity Anglican Church Crowd Walla",
-        "audio": "media/Walla_church_echo_inside_english_large_isael.wav"
+        "name": "Condo Building Fire Alarm System",
+        "audio": "media/Alarm_building_voices_empty_echo_isael.wav"
       },
 
       "geometry": {
