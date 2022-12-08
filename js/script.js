@@ -46,15 +46,47 @@ $.ajax({
   success: function (response) {
     if (poi) {
       map.removeLayer(poi);
+      $("#sidebar").html("");
     }
     poi = L.geoJSON(JSON.parse(response), {
       pointToLayer: myCreateEachMarkerFunction,
       onEachFeature: myOnEachFeatureFunction,
     });
-
     poi.addTo(map);
+    map.on("contextmenu", onRightClick);
+    $("#btn_cancel").click(cancelBtnFunction);
+    $("#btn_save").click(sendDataToServer);
   },
 });
+
+//Submit data on save button click
+function sendDataToServer() {
+  $.ajax({
+    url: "add_poi.php",
+    type: "POST",
+    data: {
+      latitude: $("#latitude").val(),
+      longitude: $("#longitude").val(),
+      name: $("#name").val(),
+      audio: $("#audio").val(),
+    },
+    success: function (response) {
+      alert(response);
+    },
+  });
+}
+
+// Hide modal on cancel button click
+function cancelBtnFunction() {
+  $("#modal").hide();
+}
+
+// Modal popup on right click of map
+function onRightClick(e) {
+  $("#modal").show();
+  $("#latitude").val(e.latlng.lat.toFixed(5));
+  $("#longitude").val(e.latlng.lng.toFixed(5));
+}
 
 // Create markers from GeoJson
 function myCreateEachMarkerFunction(feature, latlng) {
@@ -104,12 +136,11 @@ function setPopupContent(feature) {
 //////////////////////////////////////////////////////////////
 
 //Create a marker on map click
-/* 
-          function onMapClick(event) {
-            let coordinates = event.latlng;
-            L.marker(coordinates).addTo(map);
-          }
-          map.on("click", onMapClick);
-          */
+
+// function onMapClick(event) {
+//   let coordinates = event.latlng;
+//   L.marker(coordinates).addTo(map);
+// }
+// map.on("click", onMapClick);
 
 //////////////////////////////////////////////////////////////
