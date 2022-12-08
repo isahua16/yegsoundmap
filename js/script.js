@@ -11,7 +11,7 @@ let corner1,
   pop,
   btn,
   marker,
-  data;
+  poi;
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -39,16 +39,21 @@ $(document).ready(function () {
     iconUrl: "media/logo.png",
     iconSize: [20, 20],
   });
+});
 
-  data = "data/attractions.geojson";
+$.ajax({
+  url: "load_poi.php",
+  success: function (response) {
+    if (poi) {
+      map.removeLayer(poi);
+    }
+    poi = L.geoJSON(JSON.parse(response), {
+      pointToLayer: myCreateEachMarkerFunction,
+      onEachFeature: myOnEachFeatureFunction,
+    });
 
-  // Add GeoJSON layer
-  geojsonLayer = new L.GeoJSON.AJAX(data, {
-    pointToLayer: myCreateEachMarkerFunction,
-    onEachFeature: myOnEachFeatureFunction,
-  });
-
-  geojsonLayer.addTo(map);
+    poi.addTo(map);
+  },
 });
 
 // Create markers from GeoJson
