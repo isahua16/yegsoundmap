@@ -78,10 +78,12 @@ function myCreateEachMarkerFunction(feature, latlng) {
   return marker;
 }
 
+//Bind popup content for each feature
 function myOnEachFeatureFunction(feature, layer) {
   layer.bindPopup(setPopupContent(feature));
 }
 
+//Create popup content
 function setPopupContent(feature) {
   return (
     `<h3>` +
