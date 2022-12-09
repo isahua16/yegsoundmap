@@ -79,6 +79,7 @@ function sendDataToServer() {
 // Hide modal on cancel button click
 function cancelBtnFunction() {
   $("#modal").hide();
+  $("#name").val("");
 }
 
 // Modal popup on right click of map
