@@ -72,6 +72,7 @@ function sendDataToServer() {
     },
     success: function (response) {
       alert(response);
+      cancelBtnFunction();
     },
   });
 }
