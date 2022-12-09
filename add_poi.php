@@ -1,4 +1,5 @@
 <?php
+// echo "{$name} succesfully added";
 
 if (isset($_POST["latitude"]) && is_numeric($_POST["latitude"])) {
     $latitude=$_POST["latitude"];
@@ -26,7 +27,7 @@ if (isset($_POST["audio"])) {
 
 $db = new PDO("pgsql:host=localhost;port=5432;dbname=yegsoundmap;", "postgres","isahua9261");
 
-$sql = $db->prepare("INSERT INTO yeg_poi (geom, name, audio) VALUES (ST_SetSRID(ST_MakePoint(:lng, :lat), 4326)), :nm, :ad");
+$sql = $db->prepare("INSERT INTO yeg_poi (geom, name, audio) VALUES ((st_setsrid(st_makepoint(:lng, :lat), 4326)), :nm, :ad)");
 
 $params = ["nm"=>$name,"lat"=>$latitude,"lng"=>$longitude,"ad"=>$audio];
 
@@ -34,6 +35,6 @@ if ($sql->execute($params)) {
     echo "{$name} succesfully added";
 } else {
     echo var_dump($sql->errorInfo());
-}
+};
 
 ?>
