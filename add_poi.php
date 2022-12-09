@@ -7,7 +7,7 @@ if (isset($_POST["latitude"]) && is_numeric($_POST["latitude"])) {
     $latitude="53.36685";
 }
 
-if (isset($_POST["longitude"]) && is_numeric($POST["longitude"])) {
+if (isset($_POST["longitude"]) && is_numeric($_POST["longitude"])) {
     $longitude=$_POST["longitude"];
 } else {
     $longitude="-113.57502";
