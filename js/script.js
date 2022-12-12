@@ -92,13 +92,13 @@ function onRightClick(e) {
 
 // Create markers from GeoJson
 function myCreateEachMarkerFunction(feature, latlng) {
-  btn = `<button id="zoomTo` + feature.properties.name.replace(/ /g, "");
+  btn = `<button id="zoomTo` + feature.properties.id;
   btn += `" class="location">`;
   btn += feature.properties.name + `</button>`;
   $("#sidebar").append(btn);
 
   //Add Zoom buttons for each feature
-  $("#zoomTo" + feature.properties.name.replace(/ /g, "")).click(function () {
+  $("#zoomTo" + feature.properties.id).click(function () {
     map.setView([latlng.lat, latlng.lng], 17);
     map.openPopup(setPopupContent(feature), latlng);
   });
