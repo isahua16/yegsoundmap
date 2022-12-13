@@ -73,6 +73,7 @@ function sendDataToServer() {
   ) {
     alert("Please fill in all the fields");
   } else {
+    //Prepare form data to be sent thru ajax call
     formData = new FormData($("form[id='poi_submission']")[0]);
 
     formData.append("poi", $("#audio")[0].files[0]);
@@ -153,23 +154,3 @@ function setPopupContent(feature) {
       </audio>`
   );
 }
-
-//////////////////////////////////////////////////////////////
-
-//Create a marker on map click
-
-// function onMapClick(event) {
-//   let coordinates = event.latlng;
-//   L.marker(coordinates).addTo(map);
-// }
-// map.on("click", onMapClick);
-
-//////////////////////////////////////////////////////////////
-
-// data: {
-// latitude: $("#latitude").val(),
-// longitude: $("#longitude").val(),
-// name: $("#name").val(),
-// audio: $("#audio").val(),
-// file: $("#audio")[0].files[0],
-// },

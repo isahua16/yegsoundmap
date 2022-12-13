@@ -9,7 +9,7 @@ if (isset($_FILES["poi"])) {
     $fileNameCmps = explode(".", $fileName);
     $fileExtension = strtolower(end($fileNameCmps));
 
-    $uploadFileDir = 'Applications/XAMPP/xamppfiles/htdocs/yegsoundmap/media/';
+    $uploadFileDir = 'media/';
     $dest_path = $uploadFileDir . $fileName;
 
     if(move_uploaded_file($fileTmpPath, $dest_path)) 
