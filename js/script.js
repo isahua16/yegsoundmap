@@ -69,7 +69,9 @@ function sendDataToServer() {
     $("#latitude").val() === "" ||
     $("#longitude").val() === "" ||
     $("#name").val() === "" ||
-    $("#audio").val() === ""
+    $("#audio").val() === "" ||
+    $("#date").val() === "" ||
+    $("#description").val() === ""
   ) {
     alert("Please fill in all the fields");
   } else {
@@ -81,6 +83,8 @@ function sendDataToServer() {
     formData.append("longitude", $("#longitude").val());
     formData.append("name", $("#name").val());
     formData.append("audio", $("#audio").val());
+    formData.append("date", $("#date").val());
+    formData.append("description", $("#description").val());
 
     $.ajax({
       url: "add_poi.php",
@@ -140,17 +144,21 @@ function myOnEachFeatureFunction(feature, layer) {
 //Create popup content
 function setPopupContent(feature) {
   return (
-    `<h3>` +
+    `<div class="popup">
+    <h3>` +
     feature.properties.name +
-    `</h3><br><audio class="audio"
+    `</h3><br><p>` +
+    feature.properties.date +
+    `</p><br><p>` +
+    feature.properties.description +
+    `</p><br><audio class="audio"
       controls
       controlslist="nodownload noremoteplayback noplaybackrate"
       src="` +
     feature.properties.audio +
-    `">
-      <a href="` +
+    `"><a href="` +
     feature.properties.audio +
     `"></a>
-      </audio>`
+      </audio></div>`
   );
 }

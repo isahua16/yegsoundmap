@@ -47,6 +47,10 @@ body {
   height: 96vh;
 }
 
+.popup {
+  /* style the popup here */
+}
+
 #sidebar {
   flex: 1 1 auto;
   display: flex;

@@ -50,6 +50,18 @@ if (isset($_POST["name"])) {
     $name="NA";
 }
 
+if (isset($_POST["date"])) {
+    $date=$_POST["date"];
+} else {
+    $date="NA";
+}
+
+if (isset($_POST["description"])) {
+    $description=$_POST["description"];
+} else {
+    $description="NA";
+}
+
 if (isset($_POST["audio"])) {
     $audio = $dest_path;
 } else {
@@ -58,9 +70,9 @@ if (isset($_POST["audio"])) {
 
 $db = new PDO("pgsql:host=localhost;port=5432;dbname=yegsoundmap;", "postgres","isahua9261");
 
-$sql = $db->prepare("INSERT INTO yeg_poi (geom, name, audio) VALUES ((st_setsrid(st_makepoint(:lng, :lat), 4326)), :nm, :ad)");
+$sql = $db->prepare("INSERT INTO yeg_poi (geom, name, audio, date, description) VALUES ((st_setsrid(st_makepoint(:lng, :lat), 4326)), :nm, :ad, :dt, :des)");
 
-$params = ["nm"=>$name,"lat"=>$latitude,"lng"=>$longitude,"ad"=>$audio];
+$params = ["nm"=>$name,"lat"=>$latitude,"lng"=>$longitude,"ad"=>$audio, "dt"=>$date, "des"=>$description];
 
 if ($sql->execute($params)) {
     echo "Your submission was succesfully added to the map.";
