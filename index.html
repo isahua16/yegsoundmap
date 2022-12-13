@@ -61,6 +61,7 @@
         <div class="modal_content">
           <div class="form_group">
             <input
+              required
               type="text"
               class="field"
               id="name"
@@ -68,6 +69,17 @@
             />
 
             <input
+              required
+              type="textarea"
+              class="field"
+              id="description"
+              placeholder="Description (Weather, Time, Event, etc.)"
+            />
+
+            <input required type="date" class="field" id="date" />
+
+            <input
+              required
               type="text"
               class="field"
               id="latitude"
@@ -75,6 +87,7 @@
             />
 
             <input
+              required
               type="text"
               class="field"
               id="longitude"
@@ -82,18 +95,17 @@
             />
 
             <input
-              type="text"
-              class="field"
+              required
+              type="file"
               id="audio"
-              placeholder="Audio File Path"
+              name="audio"
+              accept=".wav, .mp3, .ogg"
             />
           </div>
-
           <button id="btn_save">Save</button>
           <button id="btn_cancel">Cancel</button>
         </div>
       </div>
-
       <!-- Map Javascript -->
       <script src="js/script.js"></script>
     </div>

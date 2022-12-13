@@ -11,12 +11,14 @@ let corner1,
   pop,
   btn,
   marker,
-  poi;
+  poi,
+  formData;
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
 //Waits until all html and css before running the code
 $(document).ready(function () {
+  mapInit();
   //Max bounds init
   corner1 = L.latLng(53.88167850008248, -112.59475708007814);
   corner2 = L.latLng(53.207677555890015, -114.39376831054688);
@@ -41,40 +43,62 @@ $(document).ready(function () {
   });
 });
 
-$.ajax({
-  url: "load_poi.php",
-  success: function (response) {
-    if (poi) {
-      map.removeLayer(poi);
-      $("#sidebar").html("");
-    }
-    poi = L.geoJSON(JSON.parse(response), {
-      pointToLayer: myCreateEachMarkerFunction,
-      onEachFeature: myOnEachFeatureFunction,
-    });
-    poi.addTo(map);
-    map.on("contextmenu", onRightClick);
-    $("#btn_cancel").click(cancelBtnFunction);
-    $("#btn_save").click(sendDataToServer);
-  },
-});
+function mapInit() {
+  $.ajax({
+    url: "load_poi.php",
+    success: function (response) {
+      if (poi) {
+        map.removeLayer(poi);
+        $("#sidebar").html("");
+      }
+      poi = L.geoJSON(JSON.parse(response), {
+        pointToLayer: myCreateEachMarkerFunction,
+        onEachFeature: myOnEachFeatureFunction,
+      });
+      poi.addTo(map);
+      map.on("contextmenu", onRightClick);
+      $("#btn_cancel").click(cancelBtnFunction);
+      $("#btn_save").click(sendDataToServer);
+    },
+  });
+}
 
 //Submit data on save button click
 function sendDataToServer() {
-  $.ajax({
-    url: "add_poi.php",
-    type: "POST",
-    data: {
-      latitude: $("#latitude").val(),
-      longitude: $("#longitude").val(),
-      name: $("#name").val(),
-      audio: $("#audio").val(),
-    },
-    success: function (response) {
-      alert(response);
-      cancelBtnFunction();
-    },
-  });
+  if (
+    $("#latitude").val() === "" ||
+    $("#longitude").val() === "" ||
+    $("#name").val() === "" ||
+    $("#audio").val() === "" ||
+    $("#date").val() === "" ||
+    $("#description").val() === ""
+  ) {
+    alert("Please fill in all the fields");
+  } else {
+    //Prepare form data to be sent thru ajax call
+    formData = new FormData($("form[id='poi_submission']")[0]);
+
+    formData.append("poi", $("#audio")[0].files[0]);
+    formData.append("latitude", $("#latitude").val());
+    formData.append("longitude", $("#longitude").val());
+    formData.append("name", $("#name").val());
+    formData.append("audio", $("#audio").val());
+    formData.append("date", $("#date").val());
+    formData.append("description", $("#description").val());
+
+    $.ajax({
+      url: "add_poi.php",
+      type: "POST",
+      contentType: false,
+      processData: false,
+      cache: false,
+      data: formData,
+      success: function (response) {
+        alert(response);
+        cancelBtnFunction();
+      },
+    });
+  }
 }
 
 // Hide modal on cancel button click
@@ -92,13 +116,13 @@ function onRightClick(e) {
 
 // Create markers from GeoJson
 function myCreateEachMarkerFunction(feature, latlng) {
-  btn = `<button id="zoomTo` + feature.properties.name.replace(/ /g, "");
+  btn = `<button id="zoomTo` + feature.properties.id;
   btn += `" class="location">`;
   btn += feature.properties.name + `</button>`;
   $("#sidebar").append(btn);
 
   //Add Zoom buttons for each feature
-  $("#zoomTo" + feature.properties.name.replace(/ /g, "")).click(function () {
+  $("#zoomTo" + feature.properties.id).click(function () {
     map.setView([latlng.lat, latlng.lng], 17);
     map.openPopup(setPopupContent(feature), latlng);
   });
@@ -120,29 +144,21 @@ function myOnEachFeatureFunction(feature, layer) {
 //Create popup content
 function setPopupContent(feature) {
   return (
-    `<h3>` +
+    `<div class="popup">
+    <h3>` +
     feature.properties.name +
-    `</h3><br><audio class="audio"
+    `</h3><br><p>` +
+    feature.properties.date +
+    `</p><br><p>` +
+    feature.properties.description +
+    `</p><br><audio class="audio"
       controls
       controlslist="nodownload noremoteplayback noplaybackrate"
       src="` +
     feature.properties.audio +
-    `">
-      <a href="` +
+    `"><a href="` +
     feature.properties.audio +
     `"></a>
-      </audio>`
+      </audio></div>`
   );
 }
-
-//////////////////////////////////////////////////////////////
-
-//Create a marker on map click
-
-// function onMapClick(event) {
-//   let coordinates = event.latlng;
-//   L.marker(coordinates).addTo(map);
-// }
-// map.on("click", onMapClick);
-
-//////////////////////////////////////////////////////////////
