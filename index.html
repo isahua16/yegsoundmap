@@ -49,53 +49,58 @@
         <p class="social">&nbsp;</p>
         <img src="media/logo.png" alt="logo" class="logo" />
       </header>
-
+      
       <div class="content">
         <div id="map">&nbsp;</div>
         <div id="sidebar">
           <h2 class="title">Locations</h2>
         </div>
       </div>
-
+      
       <div id="modal" class="modal">
         <div class="modal_content">
           <div class="form_group">
+            <form id="poi_submission" method="post" enctype="multipart/form-data">
             <input
-              type="text"
-              class="field"
-              id="name"
-              placeholder="Location Name"
+            required
+            type="text"
+            class="field"
+            id="name"
+            placeholder="Location Name"
             />
-
+            
             <input
-              type="text"
-              class="field"
-              id="latitude"
-              placeholder="Latitude"
+            required
+            type="text"
+            class="field"
+            id="latitude"
+            placeholder="Latitude"
             />
-
+            
             <input
-              type="text"
-              class="field"
-              id="longitude"
-              placeholder="Longitude"
+            required
+            type="text"
+            class="field"
+            id="longitude"
+            placeholder="Longitude"
             />
-
-            <input
-              type="text"
-              class="field"
-              id="audio"
-              placeholder="Audio File Path"
-            />
+              
+              <input
+            required
+            type="file"
+            id="audio"
+            name="audio"
+            accept=".wav, .mp3, .ogg"
+            />  
           </div>
-
           <button id="btn_save">Save</button>
           <button id="btn_cancel">Cancel</button>
-        </div>
-      </div>
+        </form>
 
-      <!-- Map Javascript -->
-      <script src="js/script.js"></script>
+      </div>
     </div>
+    <!-- Map Javascript -->
+    <script src="js/script.js"></script>
+  </div>
   </body>
 </html>
