@@ -75,7 +75,19 @@ body {
 }
 
 /* Modal */
-.modal {
+#modal_form {
+  display: none;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#modal_welcome {
   display: none;
   z-index: 999;
   width: 100%;

@@ -11,7 +11,7 @@
         </div>
       </div>
 
-      <div id="modal" class="modal">
+      <div id="modal_form" class="modal">
         <div class="modal_content">
           <div class="form_group">
             <input
@@ -60,8 +60,21 @@
           <button id="btn_cancel">Cancel</button>
         </div>
       </div>
+      
+      <!-- welcome modal -->
+      <div id="modal_welcome" class="modal">
+        <div class="modal_content">
+          <div class="form_group">
+          <img src="media/logo_with_text.png" alt="logo" class="logo" />
+            <button id="btn_close_modal">Take me to the map</button>
+            <button id="btn_login">I am to upload my sounds</button>
+          </div>
+        </div>
+      </div>
+      <!-- Sidebar Javascript -->
+      <script src="resources/L.Control.Sidebar.js"></script>
       <!-- Map Javascript -->
-      <script src="js/script.js"></script>
+      <script src="resources/script.js"></script>
     </div>
   </body>
 </html>

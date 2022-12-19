@@ -3,7 +3,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
 
     <!-- Leaflet CSS -->
     <link
@@ -12,6 +12,9 @@
       integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
       crossorigin=""
     />
+    
+    <!-- Sidebar Styles -->
+    <link rel="stylesheet" href="css/L.Control.Sidebar.css" />
 
     <!-- Leaflet Library -->
     <script

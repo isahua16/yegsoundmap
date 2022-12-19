@@ -4,3 +4,4 @@
         <a href="http://localhost/yegsoundmap/login.php">Login</a>
         <img src="media/logo.png" alt="logo" class="logo" />
       </nav>
+      

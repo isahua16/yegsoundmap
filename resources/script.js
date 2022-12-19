@@ -12,7 +12,8 @@ let corner1,
   btn,
   marker,
   poi,
-  formData;
+  formData,
+  sidebar;
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -101,15 +102,15 @@ function sendDataToServer() {
   }
 }
 
-// Hide modal on cancel button click
+// Hide modal form on cancel button click
 function cancelBtnFunction() {
-  $("#modal").hide();
+  $("#modal_form").hide();
   $("#name").val("");
 }
 
 // Modal popup on right click of map
 function onRightClick(e) {
-  $("#modal").show();
+  $("#modal_form").show();
   $("#latitude").val(e.latlng.lat.toFixed(5));
   $("#longitude").val(e.latlng.lng.toFixed(5));
 }
@@ -162,3 +163,14 @@ function setPopupContent(feature) {
       </audio></div>`
   );
 }
+
+// Add dynamic sidebar for the locations tab
+// sidebar = L.control.sidebar("sidebar", {
+//   position: "right",
+// });
+
+// map.addControl(sidebar);
+
+// setTimeout(function () {
+//   sidebar.show();
+// }, 500);
