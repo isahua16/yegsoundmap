@@ -91,7 +91,7 @@
       <script src="resources/L.Control.Sidebar.js"></script>
       
       <!-- Map Javascript -->
-      <script src="resources/script.js"></script>
+      <script src="resources/user_script.js"></script>
     </div>
   </body>
 </html>
