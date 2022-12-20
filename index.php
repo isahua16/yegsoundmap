@@ -1,5 +1,11 @@
 <?php include "includes/init.php" ?>
-
+<?php 
+  if(logged_in()) {
+    $username = $_SESSION['username'];
+  } else {  
+      // redirect('index.php');    
+  }
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php include "includes/header.php" ?>
@@ -16,56 +22,6 @@
         </div>
       </div>
 
-      <div id="modal_form" class="modal">
-        <div class="modal_content">
-          <div class="form_group">
-            <input
-              required
-              type="text"
-              class="field"
-              id="name"
-              placeholder="Location Name"
-            />
-
-            <input
-              required
-              type="textarea"
-              class="field"
-              id="description"
-              placeholder="Description (Weather, Time, Event, etc.)"
-            />
-
-            <input required type="date" class="field" id="date" />
-
-            <input
-              required
-              type="text"
-              class="field"
-              id="latitude"
-              placeholder="Latitude"
-            />
-
-            <input
-              required
-              type="text"
-              class="field"
-              id="longitude"
-              placeholder="Longitude"
-            />
-
-            <input
-              required
-              type="file"
-              id="audio"
-              name="audio"
-              accept=".wav, .mp3, .ogg"
-            />
-          </div>
-          <button id="btn_save">Save</button>
-          <button id="btn_cancel">Cancel</button>
-        </div>
-      </div>
-      
       <!-- welcome modal -->
       <div id="modal_welcome" class="modal">
         <div class="modal_content">
@@ -80,7 +36,7 @@
       <script src="resources/L.Control.Sidebar.js"></script>
       
       <!-- Map Javascript -->
-      <script src="resources/script.js"></script>
+      <script src="resources/index_script.js"></script>
     </div>
   </body>
 </html>
