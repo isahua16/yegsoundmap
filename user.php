@@ -1,19 +1,33 @@
 <!-- For signed in users only, need to be signed in to access this page which has the contribute functionalities -->
 
+<?php include "includes/init.php" ?>
+
+<?php 
+  if(logged_in()) {
+    $username = $_SESSION['username'];
+  } else {  
+      redirect('index.php');    
+  }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php include "includes/header.php" ?>
   <body>
-    <div class="container">    
-    <?php include "includes/nav.php" ?>     
+    <div class="container">  
+    <?php include "includes/nav.php" ?>
+    <?php 
+      show_msg();  
+        ?>       
       <div class="content">
         <div id="map">&nbsp;</div>
         <div id="sidebar">
+          <?php echo "<p>Logged in as {$username}</p>"; ?>
           <h2 class="title">Locations</h2>
         </div>
       </div>
 
-      <div id="modal" class="modal">
+      <div id="modal_form" class="modal">
         <div class="modal_content">
           <div class="form_group">
             <input
@@ -62,8 +76,22 @@
           <button id="btn_cancel">Cancel</button>
         </div>
       </div>
+      
+      <!-- welcome modal -->
+      <div id="modal_welcome" class="modal">
+        <div class="modal_content">
+          <div class="form_group">
+          <img src="media/logo_with_text.png" alt="logo" class="logo" />
+            <button id="btn_close_modal">Take me to the map</button>
+            <button id="btn_login">I am to upload my sounds</button>
+          </div>
+        </div>
+      </div>
+      <!-- Sidebar Javascript -->
+      <script src="resources/L.Control.Sidebar.js"></script>
+      
       <!-- Map Javascript -->
-      <script src="js/script.js"></script>
+      <script src="resources/script.js"></script>
     </div>
   </body>
 </html>

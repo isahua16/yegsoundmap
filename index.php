@@ -1,9 +1,14 @@
+<?php include "includes/init.php" ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <?php include "includes/header.php" ?>
   <body>
-    <div class="container">    
-    <?php include "includes/nav.php" ?>     
+    <div class="container">  
+    <?php include "includes/nav.php" ?>
+    <?php 
+      show_msg();  
+        ?>       
       <div class="content">
         <div id="map">&nbsp;</div>
         <div id="sidebar">
@@ -73,6 +78,7 @@
       </div>
       <!-- Sidebar Javascript -->
       <script src="resources/L.Control.Sidebar.js"></script>
+      
       <!-- Map Javascript -->
       <script src="resources/script.js"></script>
     </div>
