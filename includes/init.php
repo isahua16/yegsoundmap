@@ -1,5 +1,3 @@
-//show be ignore by bit.
-
 <?php
 ob_start();
 session_start();
