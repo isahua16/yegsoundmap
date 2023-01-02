@@ -13,6 +13,9 @@
       crossorigin=""
     />
     
+    <!-- Geocoder styles -->
+    <link rel="stylesheet" href="css/Control.Geocoder.css" />
+
     <!-- Sidebar Styles -->
     <link rel="stylesheet" href="css/L.Control.Sidebar.css" />
 
@@ -28,6 +31,12 @@
 
     <!-- Leaflet Ajax Plugin -->
     <script src="resources/leaflet.ajax.min.js"></script>
+
+    <!-- Sidebar Javascript -->
+    <script src="resources/L.Control.Sidebar.js"></script>
+    
+    <!-- Geocoder Library -->
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 
     <!-- Google Fonts Inter -->
     <link

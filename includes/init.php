@@ -2,7 +2,7 @@
 ob_start();
 session_start();
 
-$dsn = "pgsql:host=localhost;dbname=yegsoundmap";
+$dsn = "pgsql:host=localhost;port=5432;dbname=yegsoundmap;";
 
 $opt = [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
