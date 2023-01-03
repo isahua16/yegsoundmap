@@ -17,7 +17,7 @@ if(logged_in()) {
 
   echo "<a href='{$register_page}'>Register</a>";
 
-  echo "<a href='{$logout_page}'>Login</a>";
+  echo "<a href='{$login_page}'>Login</a>";
 
 }
 
