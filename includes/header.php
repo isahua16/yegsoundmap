@@ -51,4 +51,5 @@
     />
 
     <title>Edmonton Sound Map</title>
+    <link rel="shortcut icon" type="image/png" href="media/logo.png"/>
 </head>
