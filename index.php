@@ -1,11 +1,11 @@
 <?php include "includes/init.php" ?>
+
 <?php 
   if(logged_in()) {
-    $username = $_SESSION['username'];
-  } else {  
-      // redirect('index.php');    
+    redirect('user.php');
   }
   ?>
+  
 <!DOCTYPE html>
 <html lang="en">
 <?php include "includes/header.php" ?>

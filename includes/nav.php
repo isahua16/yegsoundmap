@@ -1,7 +1,6 @@
 <nav class="header">
 
 <?php 
-
 if(logged_in()) {
 
   echo "<a href='{$user_page}'>@yegsoundmap</a>";
@@ -13,7 +12,7 @@ if(logged_in()) {
 
 } else {
 
-  echo "<a href='{$public_page}}'>@yegsoundmap</a>";
+  echo "<a href='{$public_page}'>@yegsoundmap</a>";
 
   echo "<a href='{$register_page}'>Register</a>";
 
