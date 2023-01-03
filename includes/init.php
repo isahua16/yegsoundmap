@@ -16,7 +16,7 @@ $root_directory = "yegsoundmap";
 $from_email = "isaelhuard@gmail.com";
 $reply_email = "isaelhuard@gmail.com";
 
-$public_page = "http://localhost/yegsoundmap/user.php";
+$public_page = "http://localhost/yegsoundmap/index.php";
 $user_page = "http://localhost/yegsoundmap/user.php";
 $logout_page = "http://localhost/yegsoundmap/logout.php";
 $register_page = "http://localhost/yegsoundmap/register.php";
