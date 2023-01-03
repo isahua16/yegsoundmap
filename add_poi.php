@@ -1,3 +1,5 @@
+<?php include "includes/init.php" ?>
+
 <?php
 
 if (isset($_FILES["poi"]) && $_FILES['poi']['error'] === UPLOAD_ERR_OK) {
@@ -10,7 +12,7 @@ if (isset($_FILES["poi"]) && $_FILES['poi']['error'] === UPLOAD_ERR_OK) {
     $fileExtension = strtolower(end($fileNameCmps));
     $newFileName = round(microtime(true)) . '.' . $fileExtension;
 
-    $allowedExtensions = array('wav', 'mp3', 'ogg');
+    $allowedExtensions = array('wav', 'mp3', 'ogg', 'mp4a', 'aac');
 
     if (in_array($fileExtension, $allowedExtensions) && $fileSize < 50000000) {
         
@@ -24,10 +26,10 @@ if (isset($_FILES["poi"]) && $_FILES['poi']['error'] === UPLOAD_ERR_OK) {
                 echo 'There was an error moving the file to the server directory';
             }
          }  else { 
-            echo 'Upload failed. Please make sure that your file is in either .wav, .mp3 or .ogg format, and less than 20MB.';
+            echo 'Upload failed. Please make sure that your file is in either .wav, .mp3, .mp4a, .aac or .ogg format, and less than 20MB.';
         }
     } else {
-        $message = 'There is some error in the file upload.';
+        $message = 'There is an error in the file upload.';
         $message .= 'Error:' . $_FILES['poi']['error'];
         echo $message;
     }
@@ -68,11 +70,23 @@ if (isset($_POST["audio"])) {
     $audio="NA";
 }
 
-$db = new PDO("pgsql:host=localhost;port=5432;dbname=yegsoundmap;", "postgres","isahua9261");
+if (isset($_POST["user"])) {
+    $user=$_POST["user"];
+} else {
+    $user="NA";
+}
 
-$sql = $db->prepare("INSERT INTO yeg_poi (geom, name, audio, date, description) VALUES ((st_setsrid(st_makepoint(:lng, :lat), 4326)), :nm, :ad, :dt, :des)");
+if (isset($_POST["terms"])) {
+    $terms=$_POST["terms"];
+} else {
+    $terms="disagree";
+}
 
-$params = ["nm"=>$name,"lat"=>$latitude,"lng"=>$longitude,"ad"=>$audio, "dt"=>$date, "des"=>$description];
+// $db = new PDO("pgsql:host=localhost;port=5432;dbname=yegsoundmap;", "postgres","isahua9261");
+
+$sql = $pdo->prepare("INSERT INTO yeg_poi (geom, name, audio, date, description, userd, terms) VALUES ((st_setsrid(st_makepoint(:lng, :lat), 4326)), :nm, :ad, :dt, :des, :ur, :tm)");
+
+$params = ["nm"=>$name,"lat"=>$latitude,"lng"=>$longitude,"ad"=>$audio,"dt"=>$date,"des"=>$description,"ur"=>$user,"tm"=>$terms];
 
 if ($sql->execute($params)) {
     echo "Your submission was succesfully added to the map.";

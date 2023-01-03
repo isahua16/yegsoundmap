@@ -1,7 +1,8 @@
-<?php
-    $db = new PDO("pgsql:host=localhost;port=5432;dbname=yegsoundmap;", "postgres","isahua9261");
+<?php include "includes/init.php" ?>
 
-    $sql = $db->query("SELECT id, name, audio, description, date, ST_AsGeoJSON(geom,5) as geom FROM yeg_poi ORDER BY id");
+<?php
+
+    $sql = $pdo->query("SELECT id, name, audio, description, date, userd, ST_AsGeoJSON(geom,5) as geom FROM yeg_poi ORDER BY id");
 
     $features = [];
 

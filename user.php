@@ -30,7 +30,16 @@
       <div id="modal_form" class="modal">
         <div class="modal_content">
           <div class="form_group">
-            <input
+          <input
+              required
+              type="text"
+              class="field"
+              id="user"
+              value="<?php echo $username ?>"
+              placeholder="Contributor Name"
+            />  
+          
+          <input
               required
               type="text"
               class="field"
@@ -66,11 +75,20 @@
 
             <input
               required
+              type="checkbox"
+              class="field"
+              id="terms"
+              value="1"
+            />
+
+            <input
+              required
               type="file"
               id="audio"
               name="audio"
-              accept=".wav, .mp3, .ogg"
-            />
+              accept=".wav, .mp3, .ogg, .mp4a, .aac"
+              />
+              <div id="status"></div>
           </div>
           <button id="btn_save">Save</button>
           <button id="btn_cancel">Cancel</button>
@@ -87,11 +105,10 @@
           </div>
         </div>
       </div>
-      <!-- Sidebar Javascript -->
-      <script src="resources/L.Control.Sidebar.js"></script>
-      
+  
       <!-- Map Javascript -->
       <script src="resources/user_script.js"></script>
+
     </div>
   </body>
 </html>

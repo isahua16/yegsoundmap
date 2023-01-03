@@ -1,5 +1,5 @@
 "use strict;";
-// Test
+
 //variables
 let corner1,
   corner2,
@@ -9,9 +9,11 @@ let corner1,
   myIcon,
   geojsonLayer,
   pop,
+  btn,
   marker,
   poi,
-  sidebar;
+  sidebar,
+  geocoder;
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -23,7 +25,6 @@ $(document).ready(function () {
   corner2 = L.latLng(53.207677555890015, -114.39376831054688);
   bounds = L.latLngBounds(corner1, corner2);
 
-  //Map init
   map = L.map("map", { attributionControl: false })
     .setView([53.5461, -113.4937], 11)
     .setMaxBounds(bounds);
@@ -31,7 +32,9 @@ $(document).ready(function () {
   //Background Layer
   tile = L.tileLayer(
     "https://tile.jawg.io/e5ca48b4-fe5e-4dea-9141-1971ed06c7af/{z}/{x}/{y}{r}.png?access-token=8nDStn933xTbhSC1BHugLOD5N40As4Lkm1HFlYv22SBm6jAlIZReTwdLZiLHjnlu",
-    { minZoom: 11 }
+    {
+      minZoom: 11,
+    }
   );
   map.addLayer(tile);
 
@@ -40,6 +43,25 @@ $(document).ready(function () {
     iconUrl: "media/logo.png",
     iconSize: [20, 20],
   });
+
+  //create geocoding search bar
+  geocoder = L.Control.geocoder({
+    position: "topright",
+    collapsed: true,
+    placeholder: "Search...",
+    defaultMarkGeocode: false,
+    errorMessage: "No result. Try right-clicking at desired location.",
+    geocoder: new L.Control.Geocoder.Nominatim({
+      geocodingQueryParams: {
+        countrycodes: "CA",
+        viewbox: "-112.59, 53.88, -114.39, 53.21",
+        bounded: 1,
+      },
+    }),
+  });
+
+  geocoder.addTo(map);
+  onGeocodingResult();
 });
 
 function mapInit() {
@@ -57,6 +79,16 @@ function mapInit() {
       poi.addTo(map);
     },
   });
+}
+
+//Zoom on geocoding result
+function onGeocodingResult() {
+  geocoder
+    .on("markgeocode", function (e) {
+      const center = e.geocode.center;
+      map.setView(center, 17);
+    })
+    .addTo(map);
 }
 
 // Create markers from GeoJson
@@ -92,11 +124,13 @@ function setPopupContent(feature) {
     `<div class="popup">
     <h3>` +
     feature.properties.name +
-    `</h3><br><p>` +
+    `</h3><p> Recorded by ` +
+    feature.properties.userd +
+    ` on ` +
     feature.properties.date +
-    `</p><br><p>` +
+    `</p><p>` +
     feature.properties.description +
-    `</p><br><audio class="audio"
+    `</p><audio class="audio"
       controls
       controlslist="nodownload noremoteplayback noplaybackrate"
       src="` +
@@ -107,14 +141,3 @@ function setPopupContent(feature) {
       </audio></div>`
   );
 }
-
-// Add dynamic sidebar for the locations tab
-// sidebar = L.control.sidebar("sidebar", {
-//   position: "right",
-// });
-
-// map.addControl(sidebar);
-
-// setTimeout(function () {
-//   sidebar.show();
-// }, 500);
