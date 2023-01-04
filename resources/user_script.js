@@ -172,7 +172,7 @@ function onRightClick(e) {
 
   geocoder.options.geocoder.reverse(
     e.latlng,
-    map.options.crs.scale(map.getZoom()),
+    map.options.crs.scale(18, map.getZoom()),
     function (results) {
       $("#name").val(results[0].name);
     }
