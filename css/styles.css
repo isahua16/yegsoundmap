@@ -49,7 +49,7 @@ body {
 
 #sidebar {
   flex: 0 1 auto;
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 5px;
 }
@@ -113,4 +113,8 @@ body {
   #sidebar {
     display: none;
   }
+}
+
+.disabled {
+  display: none;
 }

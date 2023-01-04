@@ -15,7 +15,8 @@ let corner1,
   formData,
   sidebar,
   geocoder,
-  faqBtn;
+  faqBtn,
+  sidebarBtn;
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -28,7 +29,7 @@ $(document).ready(function () {
   bounds = L.latLngBounds(corner1, corner2);
 
   map = L.map("map", { attributionControl: false })
-    .setView([53.54072, -113.37976], 11)
+    .setView([53.53337, -113.50937], 11)
     .setMaxBounds(bounds);
 
   //Background Layer
@@ -66,12 +67,27 @@ $(document).ready(function () {
 
   onGeocodingResult();
 
-  L.easyButton(
+  faqBtn = L.easyButton(
     `<img src="media/info-solid.svg" width="22px" height="22px" style="padding-top: 5px" class="icon-faq">`,
     function (btn, map) {
       $("#modal_faq").show();
     }
   ).addTo(map);
+
+  sidebarBtn = L.easyButton(
+    `<img src="media/caret-left-solid.svg" width="22px" height="22px" style="padding-top: 5px" class="icon-faq">`,
+    function (btn, map) {
+      $("#sidebar").toggle();
+    }
+  )
+    .setPosition("topright")
+    .addTo(map);
+
+  if ($(window).width() < 800) {
+    sidebarBtn.disable();
+  } else {
+    sidebarBtn.enable();
+  }
 });
 
 $("#btn_close").click(function () {
