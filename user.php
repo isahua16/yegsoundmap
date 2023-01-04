@@ -13,16 +13,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include "includes/header.php" ?>
-  <body>
-    <div class="container">  
+  <body> 
     <?php include "includes/nav.php" ?>
     <?php 
       show_msg();  
         ?>       
       <div class="content">
-        <div id="map">&nbsp;</div>
+        <div id="map"></div>
         <div id="sidebar">
-          <?php echo "<p>Logged in as {$username}</p>"; ?>
           <h2 class="title">Locations</h2>
         </div>
       </div>
@@ -76,10 +74,12 @@
             <input
               required
               type="checkbox"
+              
               class="field"
               id="terms"
               value="1"
             />
+            <label for="terms"> I agree to the <a href="<?php echo $user_page;?> "target=”_blank”>terms and conditions</a>as set out by the user agreement</label>
 
             <input
               required
@@ -96,12 +96,10 @@
       </div>
       
       <!-- welcome modal -->
-      <div id="modal_welcome" class="modal">
+      <div id="modal_faq" class="modal">
         <div class="modal_content">
           <div class="form_group">
-          <img src="media/logo_with_text.png" alt="logo" class="logo" />
-            <button id="btn_close_modal">Take me to the map</button>
-            <button id="btn_login">I am to upload my sounds</button>
+            <button id="btn_close">close</button>
           </div>
         </div>
       </div>
@@ -109,6 +107,6 @@
       <!-- Map Javascript -->
       <script src="resources/user_script.js"></script>
 
-    </div>
+    
   </body>
 </html>

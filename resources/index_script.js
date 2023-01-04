@@ -31,7 +31,7 @@ $(document).ready(function () {
 
   //Background Layer
   tile = L.tileLayer(
-    "https://tile.jawg.io/e5ca48b4-fe5e-4dea-9141-1971ed06c7af/{z}/{x}/{y}{r}.png?access-token=8nDStn933xTbhSC1BHugLOD5N40As4Lkm1HFlYv22SBm6jAlIZReTwdLZiLHjnlu",
+    "https://tile.jawg.io/2110036d-d2fc-47bb-92a1-b83946dca4f3/{z}/{x}/{y}{r}.png?access-token=8nDStn933xTbhSC1BHugLOD5N40As4Lkm1HFlYv22SBm6jAlIZReTwdLZiLHjnlu",
     {
       minZoom: 11,
     }

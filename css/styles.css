@@ -15,14 +15,9 @@
 }
 
 body {
-  font-family: "Aleo", serif;
+  font-family: "Inter", serif;
   color: #292929;
-}
-
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  height: 100%;
+  overflow: hidden;
 }
 
 /* Header */
@@ -32,6 +27,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 30px;
 }
 
 .logo {
@@ -44,40 +40,40 @@ body {
 .content {
   display: flex;
   gap: 16px;
-  height: 96vh;
 }
 
-.popup {
-  /* style the popup here */
+#map {
+  flex: 1 0 70%;
+  height: calc(100vh - 30px);
 }
 
 #sidebar {
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   display: flex;
   flex-direction: column;
   gap: 5px;
-  overflow: auto;
 }
 
 .location {
   justify-items: center;
 }
 
-#map {
-  flex: 1 1 65%;
-  overflow: hidden;
-}
+/* Popup */
 
+.popup {
+  /* style the popup here */
+}
 /* Audio Player */
 
 .audio {
   display: block;
 }
 
-/* Modal */
+/* Modals */
+
 #modal_form {
   display: none;
-  z-index: 10000000000;
+  z-index: 1000;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
@@ -87,9 +83,9 @@ body {
   overflow: hidden;
 }
 
-#modal_welcome {
+#modal_faq {
   display: none;
-  z-index: 999;
+  z-index: 1000;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
@@ -109,16 +105,12 @@ body {
 
 /* Mobile */
 
-@media (max-width: 600px) {
-  .content {
-    flex-direction: column;
-  }
-
+@media (max-width: 800px) {
   #map {
-    flex: 1 1 65%;
+    flex: 1 1 auto;
   }
 
   #sidebar {
-    flex: 1 1 auto;
+    display: none;
   }
 }

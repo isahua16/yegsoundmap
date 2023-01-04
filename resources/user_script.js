@@ -14,7 +14,8 @@ let corner1,
   poi,
   formData,
   sidebar,
-  geocoder;
+  geocoder,
+  faqBtn;
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -27,12 +28,12 @@ $(document).ready(function () {
   bounds = L.latLngBounds(corner1, corner2);
 
   map = L.map("map", { attributionControl: false })
-    .setView([53.5461, -113.4937], 11)
+    .setView([53.54072, -113.37976], 11)
     .setMaxBounds(bounds);
 
   //Background Layer
   tile = L.tileLayer(
-    "https://tile.jawg.io/e5ca48b4-fe5e-4dea-9141-1971ed06c7af/{z}/{x}/{y}{r}.png?access-token=8nDStn933xTbhSC1BHugLOD5N40As4Lkm1HFlYv22SBm6jAlIZReTwdLZiLHjnlu",
+    "https://tile.jawg.io/2110036d-d2fc-47bb-92a1-b83946dca4f3/{z}/{x}/{y}{r}.png?access-token=8nDStn933xTbhSC1BHugLOD5N40As4Lkm1HFlYv22SBm6jAlIZReTwdLZiLHjnlu",
     {
       minZoom: 11,
     }
@@ -64,6 +65,17 @@ $(document).ready(function () {
   geocoder.addTo(map);
 
   onGeocodingResult();
+
+  L.easyButton(
+    `<img src="media/info-solid.svg" width="22px" height="22px" style="padding-top: 5px" class="icon-faq">`,
+    function (btn, map) {
+      $("#modal_faq").show();
+    }
+  ).addTo(map);
+});
+
+$("#btn_close").click(function () {
+  $("#modal_faq").hide();
 });
 
 function mapInit() {
