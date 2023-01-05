@@ -7,7 +7,7 @@
 
             $row = return_field_data($pdo, "users", "username", $username);
             
-            $body = "Please go to http://{$_SERVER['SERVER_NAME']}/{$root_directory}/reset_2.php?user={$username}&code={$row['validationcode']} to reset your password";
+            $body = "Please go to https://{$_SERVER['SERVER_NAME']}/{$root_directory}/reset_2.php?user={$username}&code={$row['validationcode']} to reset your password";
                 
             send_mail($row['email'], "Reset Password", $body, $from_email, $reply_email);
 

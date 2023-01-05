@@ -2,7 +2,7 @@
 ob_start();
 session_start();
 
-$dsn = "pgsql:host=localhost;port=5432;dbname=yegsoundmap;";
+$dsn = "pgsql:host=localhost;port=5432;dbname=edmonto9_yegsoundmap;";
 
 $opt = [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -10,17 +10,27 @@ $opt = [
     PDO::ATTR_EMULATE_PREPARES => false
 ];
 
-$pdo = new PDO($dsn, 'postgres', 'isahua9261', $opt);
+$pdo = new PDO($dsn, 'edmonto9_postgres', 'zEqs%KQ7%E5#1^b9&g0sx', $opt);
 
-$root_directory = "yegsoundmap";
+$root_directory = "home/edmonto9/";
 $from_email = "isaelhuard@gmail.com";
 $reply_email = "isaelhuard@gmail.com";
 
-$public_page = "http://localhost/yegsoundmap/index.php";
-$user_page = "http://localhost/yegsoundmap/user.php";
-$logout_page = "http://localhost/yegsoundmap/logout.php";
-$register_page = "http://localhost/yegsoundmap/register.php";
-$login_page = "http://localhost/yegsoundmap/login.php";
+$public_page = "https://edmontonsoundmap.com/index.php";
+$user_page = "https://edmontonsoundmap.com/user.php";
+$logout_page = "https://edmontonsoundmap.com/logout.php";
+$register_page = "https://edmontonsoundmap.com/register.php";
+$login_page = "https://edmontonsoundmap.com/login.php";
+
+// $root_directory = "yegsoundmap";
+// $from_email = "isaelhuard@gmail.com";
+// $reply_email = "isaelhuard@gmail.com";
+
+// $public_page = "http://localhost/yegsoundmap/index.php";
+// $user_page = "http://localhost/yegsoundmap/user.php";
+// $logout_page = "http://localhost/yegsoundmap/logout.php";
+// $register_page = "http://localhost/yegsoundmap/register.php";
+// $login_page = "http://localhost/yegsoundmap/login.php";
 
 include "includes/php_functions.php";
 
