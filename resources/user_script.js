@@ -16,12 +16,44 @@ let corner1,
   sidebar,
   geocoder,
   faqBtn,
-  sidebarBtn;
+  sidebarBtn,
+  intro,
+  logoSplash,
+  logoSpan;
+
+intro = document.querySelector(".intro");
+logoSplash = document.querySelector(".logo_splash");
+logoSpan = document.querySelectorAll(".logo_span");
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
 //Waits until all html and css before running the code
 $(document).ready(function () {
+  intro = document.querySelector(".intro");
+  logoSplash = document.querySelector(".logo_splash");
+  logoSpan = document.querySelectorAll(".logo_span");
+
+  setTimeout(() => {
+    logoSpan.forEach((span, idx) => {
+      setTimeout(() => {
+        span.classList.add("active");
+      }, (idx + 1) * 400);
+    });
+
+    setTimeout(() => {
+      logoSpan.forEach((span, idx) => {
+        setTimeout(() => {
+          span.classList.remove("active");
+          span.classList.add("fade");
+        }, (idx + 1) * 50);
+      });
+    }, 2000);
+
+    setTimeout(() => {
+      intro.style.top = "-100vh";
+    }, 2300);
+  });
+
   mapInit();
   //Max bounds init
   corner1 = L.latLng(53.88167850008248, -112.59475708007814);

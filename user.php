@@ -103,6 +103,14 @@
           </div>
         </div>
       </div>
+
+      <div class="intro">
+        <h1 class="logo_splash">
+
+          <span class="logo_span">edmonton </span><span class="logo_span">sound </span><span class="logo_span"> map.</span>
+        </h1>
+        </div>
+        
   
       <!-- Map Javascript -->
       <script src="resources/user_script.js"></script>

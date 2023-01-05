@@ -44,17 +44,8 @@
     <!-- Easy button library -->
     <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
 
-    <!-- Google Fonts "Inter" -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Google fonts "Aleo" -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&family=Montserrat+Alternates:wght@300;400&display=swap" rel="stylesheet">
 
     <title>Edmonton Sound Map</title>
     <link rel="shortcut icon" type="image/png" href="media/logo.png"/>
