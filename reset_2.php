@@ -36,10 +36,10 @@
                 $user_data=[':password'=>password_hash($password, PASSWORD_BCRYPT), ":username"=>$username];
                 $stmnt->execute($user_data);
                 set_msg("Password succesfully updated. Please log in");
+                unset($_SESSION['username']);
                 redirect("index.php");
             } else { 
                 set_msg("Passwords entered don't match");
-
             }
            
         } catch(PDOException $e) {

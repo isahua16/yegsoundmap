@@ -1,6 +1,8 @@
 <?php
     include "includes/init.php";
 
+    unset($_SESSION['username']);
+
     if($_SERVER['REQUEST_METHOD']=='POST') {
         $username=$_POST['username'];
         if(count_field_val($pdo, "users", "username", $username)>0) {
