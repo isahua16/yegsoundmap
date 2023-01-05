@@ -76,7 +76,7 @@
              
         </div>
         <div class="form_group">
-                <a href="reset_1.php" tabindex="5" class="forgot-password">Forgot Password?</a>
+                <a class="link" href="reset_1.php" tabindex="5" class="forgot-password">Forgot Password?</a>
             </div>
         </div>
     </form>

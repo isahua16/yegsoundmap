@@ -74,12 +74,11 @@
             <input
               required
               type="checkbox"
-              
               class="field"
               id="terms"
               value="1"
             />
-            <label for="terms"> I agree to the <a href="<?php echo $user_page;?> "target=”_blank”>terms and conditions</a>as set out by the user agreement</label>
+            <label for="terms"> I agree to the <a class="link" href="<?php echo $user_page;?> "target=”_blank”>terms and conditions</a>as set out by the user agreement</label>
 
             <input
               required

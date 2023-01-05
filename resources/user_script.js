@@ -119,6 +119,15 @@ $(document).ready(function () {
   }
 });
 
+//Checks screen resize events and updates the sidebar button accordingly
+$(window).on("resize", function () {
+  if ($(window).width() < 800) {
+    sidebarBtn.disable();
+  } else {
+    sidebarBtn.enable();
+  }
+});
+//Adds and event listener to close the FAQ modal
 $("#btn_close").click(function () {
   $("#modal_faq").hide();
 });
@@ -227,6 +236,7 @@ function onRightClick(e) {
   $("#latitude").val(e.latlng.lat.toFixed(5));
   $("#longitude").val(e.latlng.lng.toFixed(5));
 
+  //Reverse geocoding on right click
   geocoder.options.geocoder.reverse(
     e.latlng,
     map.options.crs.scale(18, map.getZoom()),
