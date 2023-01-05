@@ -26,7 +26,7 @@ if (isset($_FILES["poi"]) && $_FILES['poi']['error'] === UPLOAD_ERR_OK) {
                 echo 'There was an error moving the file to the server directory';
             }
          }  else { 
-            echo 'Upload failed. Please make sure that your file is in either .wav, .mp3, .mp4a, .aac or .ogg format, and less than 20MB.';
+            echo 'Upload failed. Please make sure that your file is in either .wav, .mp3, .m4a, or .ogg format, and less than 20MB.';
         }
     } else {
         $message = 'There is an error in the file upload.';
