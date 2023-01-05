@@ -10,7 +10,7 @@
             $body = "Please go to https://{$_SERVER['SERVER_NAME']}/reset_2.php?user={$username}&code={$row['validationcode']} to reset your password";
                 
             send_mail($row['email'], "Reset Password", $body, $from_email, $reply_email);
-
+            set_msg("Please check your email for the reset url. Don't forget to check your spam folder.");
         } else {
             set_msg("{$username} was not found in the database");
         }
