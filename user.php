@@ -27,32 +27,32 @@
 
       <div id="modal_form" class="modal">
         <div class="modal_content">
-          <div class="form_group">
+          <div class="form_fields">
+          
+          <label for="user">Recordist Name</label>  
           <input
               required
               type="text"
               class="field"
               id="user"
               value="<?php echo $username ?>"
-              placeholder="Contributor Name"
-            />  
+            />
           
+          <label for="name">Location</label> 
           <input
               required
               type="text"
               class="field"
               id="name"
-              placeholder="Location Name"
             />
-
-            <input
+            
+            <label for="description">Description (weather, time, event, etc.)</label>
+            <textarea rows="5" cols="10" 
               required
-              type="textarea"
               class="field"
-              id="description"
-              placeholder="Description (Weather, Time, Event, etc.)"
-            />
-
+              id="description" style="resize: none;"></textarea>
+            
+            <label for="date">Date recorded</label> 
             <input required type="date" class="field" id="date" />
 
             <input
@@ -60,7 +60,6 @@
               type="text"
               class="field"
               id="latitude"
-              placeholder="Latitude"
             />
 
             <input
@@ -68,17 +67,18 @@
               type="text"
               class="field"
               id="longitude"
-              placeholder="Longitude"
             />
 
-            <input
-              required
-              type="checkbox"
-              class="field"
-              id="terms"
-              value="1"
-            />
-            <label for="terms"> I agree to the <a class="link" href="<?php echo $user_page;?> "target=”_blank”>terms and conditions</a>as set out by the user agreement</label>
+            <div class="agree">
+              <input
+                required
+                type="checkbox"
+                class="field"
+                id="terms"
+                value="1"
+              />
+              <label for="terms"> I agree to the <a class="link" href="<?php echo $user_page;?> "target=”_blank”>terms and conditions</a> as set out by the user agreement</label>
+            </div>
 
             <input
               required

@@ -155,11 +155,26 @@ a:hover {
 }
 
 .modal_content {
-  text-align: center;
+  text-align: left;
   width: 100%;
   height: 100%;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 15%;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.form_fields {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+#latitude {
+  display: none;
+}
+
+#longitude {
+  display: none;
 }
 
 /* Mobile */
@@ -172,6 +187,8 @@ a:hover {
     display: none;
   }
 }
+
+/* Easy Button */
 .easy-button-button.leaflet-bar-part.leaflet-interactive.unnamed-state-active.disabled {
   display: none;
 }

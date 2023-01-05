@@ -5,7 +5,10 @@ let corner1,
   corner2,
   bounds,
   map,
-  tile,
+  jawgLayer,
+  osmLayer,
+  baseMaps,
+  layerControl,
   myIcon,
   geojsonLayer,
   pop,
@@ -62,13 +65,27 @@ $(document).ready(function () {
     .setMaxBounds(bounds);
 
   //Background Layer
-  tile = L.tileLayer(
+  jawgLayer = L.tileLayer(
     "https://tile.jawg.io/2110036d-d2fc-47bb-92a1-b83946dca4f3/{z}/{x}/{y}{r}.png?access-token=8nDStn933xTbhSC1BHugLOD5N40As4Lkm1HFlYv22SBm6jAlIZReTwdLZiLHjnlu",
     {
       minZoom: 11,
     }
   );
-  map.addLayer(tile);
+
+  osmLayer = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    minZoom: 11,
+  });
+
+  baseMaps = {
+    Default: jawgLayer,
+    Detailed: osmLayer,
+  };
+
+  layerControl = L.control
+    .layers(baseMaps, null, { position: "bottomright" })
+    .addTo(map);
+
+  map.addLayer(jawgLayer);
 
   //Marker Icon
   myIcon = L.icon({
