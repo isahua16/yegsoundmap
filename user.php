@@ -86,7 +86,7 @@
               type="file"
               id="audio"
               name="audio"
-              accept=".wav, .mp3, .ogg, .mp4a, .aac"
+              accept=".wav, .mp3, .ogg, .m4a"
               />
               <div id="status"></div>
           </div>

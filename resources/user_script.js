@@ -21,10 +21,6 @@ let corner1,
   logoSplash,
   logoSpan;
 
-intro = document.querySelector(".intro");
-logoSplash = document.querySelector(".logo_splash");
-logoSpan = document.querySelectorAll(".logo_span");
-
 ////////////////////////////////////////////////////////////////////////////////////////
 
 //Waits until all html and css before running the code
@@ -54,6 +50,7 @@ $(document).ready(function () {
     }, 2300);
   });
 
+  //Initialize leaflet map
   mapInit();
   //Max bounds init
   corner1 = L.latLng(53.88167850008248, -112.59475708007814);
