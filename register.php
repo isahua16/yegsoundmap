@@ -59,7 +59,7 @@
                 $user_data = [':firstname'=>$fname, ':lastname'=>$lname, ':username'=>$uname, ':email'=>$eml, ':password'=>password_hash($pwd, PASSWORD_BCRYPT), ':vcode'=>$vcode, ':terms'=>$tms];
                 $stmnt->execute($user_data);
                 
-                $body = "Please go to https://{$_SERVER['SERVER_NAME']}/{$root_directory}/activate.php?user={$uname}&code={$vcode} to activate your account";
+                $body = "Please go to https://{$_SERVER['SERVER_NAME']}/activate.php?user={$uname}&code={$vcode} to activate your account";
                 
                 send_mail($eml, "Activate User", $body, $from_email, $reply_email);
 
