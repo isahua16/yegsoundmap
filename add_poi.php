@@ -12,7 +12,7 @@ if (isset($_FILES["poi"]) && $_FILES['poi']['error'] === UPLOAD_ERR_OK) {
     $fileExtension = strtolower(end($fileNameCmps));
     $newFileName = round(microtime(true)) . '.' . $fileExtension;
 
-    $allowedExtensions = array('wav', 'mp3', 'ogg', 'mp4a', 'aac');
+    $allowedExtensions = array('wav', 'mp3', 'ogg', 'm4a');
 
     if (in_array($fileExtension, $allowedExtensions) && $fileSize < 50000000) {
         
