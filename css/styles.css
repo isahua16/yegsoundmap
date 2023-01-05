@@ -31,6 +31,10 @@ body {
   height: 30px;
 }
 
+a {
+  color: white;
+}
+
 .header a {
   text-decoration: none;
 }
