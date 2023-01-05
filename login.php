@@ -58,26 +58,23 @@
      show_msg();
         ?>
     </div>
+
     <form id="login-form"  method="post" role="form" style="display: block;">
-        <div class="form-group">
-            <input type="text" name="username" id="username" tabindex="1" class="field" placeholder="Username" value="<?php echo $username; ?>" required>
-        </div>
-        <div class="form_group">
-            <input type="password" name="password" id="login-
+        <div class="login_form">
+        <h2> Log in </h2>    
+        <input type="text" name="username" id="username" tabindex="1" class="field" placeholder="Username" value="<?php echo $username; ?>" required>
+        <input type="password" name="password" id="login-
         password" tabindex="2" class="field" placeholder="Password" required>
-        </div>
-        
-        <div class="form_group">
+         
+        <div class="remember">
             <input type="checkbox" tabindex="3" class="radio" name="remember" id="remember">
             <label for="remember">Stay logged in</label>
         </div>
-        <div class="form_group">    
+        <div>
             <input type="submit" name="login-submit" id="login_submit" tabindex="4" class="btn_submit" value="Log In">
-             
+            <a class="link" href="reset_1.php" tabindex="5" class="forgot-password">Forgot Password?</a>
         </div>
-        <div class="form_group">
-                <a href="reset_1.php" tabindex="5" class="forgot-password">Forgot Password?</a>
-            </div>
+            
         </div>
     </form>
    </body>

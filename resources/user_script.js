@@ -5,7 +5,10 @@ let corner1,
   corner2,
   bounds,
   map,
-  tile,
+  jawgLayer,
+  osmLayer,
+  baseMaps,
+  layerControl,
   myIcon,
   geojsonLayer,
   pop,
@@ -14,12 +17,19 @@ let corner1,
   poi,
   formData,
   sidebar,
-  geocoder;
+  geocoder,
+  faqBtn,
+  sidebarBtn;
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
 //Waits until all html and css before running the code
 $(document).ready(function () {
+  intro = document.querySelector(".intro");
+  logoSplash = document.querySelector(".logo_splash");
+  logoSpan = document.querySelectorAll(".logo_span");
+
+  //Initialize leaflet map
   mapInit();
   //Max bounds init
   corner1 = L.latLng(53.88167850008248, -112.59475708007814);
@@ -27,17 +37,31 @@ $(document).ready(function () {
   bounds = L.latLngBounds(corner1, corner2);
 
   map = L.map("map", { attributionControl: false })
-    .setView([53.5461, -113.4937], 11)
+    .setView([53.53337, -113.50937], 11)
     .setMaxBounds(bounds);
 
   //Background Layer
-  tile = L.tileLayer(
-    "https://tile.jawg.io/e5ca48b4-fe5e-4dea-9141-1971ed06c7af/{z}/{x}/{y}{r}.png?access-token=8nDStn933xTbhSC1BHugLOD5N40As4Lkm1HFlYv22SBm6jAlIZReTwdLZiLHjnlu",
+  jawgLayer = L.tileLayer(
+    "https://tile.jawg.io/2110036d-d2fc-47bb-92a1-b83946dca4f3/{z}/{x}/{y}{r}.png?access-token=8nDStn933xTbhSC1BHugLOD5N40As4Lkm1HFlYv22SBm6jAlIZReTwdLZiLHjnlu",
     {
       minZoom: 11,
     }
   );
-  map.addLayer(tile);
+
+  osmLayer = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    minZoom: 11,
+  });
+
+  baseMaps = {
+    Default: jawgLayer,
+    Detailed: osmLayer,
+  };
+
+  layerControl = L.control
+    .layers(baseMaps, null, { position: "bottomright" })
+    .addTo(map);
+
+  map.addLayer(jawgLayer);
 
   //Marker Icon
   myIcon = L.icon({
@@ -64,6 +88,41 @@ $(document).ready(function () {
   geocoder.addTo(map);
 
   onGeocodingResult();
+
+  faqBtn = L.easyButton(
+    `<img src="media/info-solid.svg" width="22px" height="22px" style="padding-top: 5px" class="icon-faq">`,
+    function (btn, map) {
+      $("#modal_faq").show();
+    }
+  ).addTo(map);
+
+  sidebarBtn = L.easyButton(
+    `<img src="media/caret-left-solid.svg" width="22px" height="22px" style="padding-top: 5px" class="icon-faq">`,
+    function (btn, map) {
+      $("#sidebar").toggle();
+    }
+  )
+    .setPosition("topright")
+    .addTo(map);
+
+  if ($(window).width() < 800) {
+    sidebarBtn.disable();
+  } else {
+    sidebarBtn.enable();
+  }
+});
+
+//Checks screen resize events and updates the sidebar button accordingly
+$(window).on("resize", function () {
+  if ($(window).width() < 800) {
+    sidebarBtn.disable();
+  } else {
+    sidebarBtn.enable();
+  }
+});
+//Adds and event listener to close the FAQ modal
+$("#btn_close").click(function () {
+  $("#modal_faq").hide();
 });
 
 function mapInit() {
@@ -170,9 +229,10 @@ function onRightClick(e) {
   $("#latitude").val(e.latlng.lat.toFixed(5));
   $("#longitude").val(e.latlng.lng.toFixed(5));
 
+  //Reverse geocoding on right click
   geocoder.options.geocoder.reverse(
     e.latlng,
-    map.options.crs.scale(map.getZoom()),
+    map.options.crs.scale(18, map.getZoom()),
     function (results) {
       $("#name").val(results[0].name);
     }
@@ -220,7 +280,7 @@ function setPopupContent(feature) {
     feature.properties.description +
     `</p><audio class="audio"
       controls
-      controlslist="nodownload noremoteplayback noplaybackrate"
+      controlslist="nodownload noremoteplayback noplaybackrate" autoplay="true"
       src="` +
     feature.properties.audio +
     `"><a href="` +

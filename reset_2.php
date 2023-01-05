@@ -36,7 +36,7 @@
                 $user_data=[':password'=>password_hash($password, PASSWORD_BCRYPT), ":username"=>$username];
                 $stmnt->execute($user_data);
                 set_msg("Password succesfully updated. Please log in");
-                
+                redirect("index.php");
             } else { 
                 set_msg("Passwords entered don't match");
 
@@ -61,16 +61,16 @@
             show_msg();
             ?>
         </div>
-        <form id="register_form" method="post" role="form" >
-            <div class="form-group">
+        <form id="register_form" method="post" role="form">
+            <div class="reset_form">
+            <h2> Create a new password </h2>
                 <input type="password" name="password" id="password" tabindex="5" class="field" placeholder="New Password" required>
-            </div>
-            <div class="form-group">
+                
                 <input type="password" name="password_confirm" id="confirm-password" tabindex="6" class="field" placeholder="Confirm New Password" required>
-            </div>
-            <div class="form-group">
-                <input type="submit" name="register-submit" id="reset-submit" tabindex="4" class="btn_reset" value="Reset Password">
-                            
+                
+                <div class="reset-group">
+                    <input type="submit" name="register-submit" id="reset-submit" tabindex="4" class="btn_reset" value="Reset Password">
+                </div>
             </div>
         </form>
     </body>

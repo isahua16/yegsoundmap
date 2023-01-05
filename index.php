@@ -21,21 +21,20 @@
           <h2 class="title">Locations</h2>
         </div>
       </div>
-
-      <!-- welcome modal -->
-      <div id="modal_welcome" class="modal">
-        <div class="modal_content">
-          <div class="form_group">
-          <img src="media/logo_with_text.png" alt="logo" class="logo" />
-            <button id="btn_close_modal">Take me to the map</button>
-            <button id="btn_login">I am to upload my sounds</button>
+      <!-- Info modal -->
+      <div id="modal_faq" class="modal">
+        <div class="modal_content_faq">
+          <div class="faq_group">
+            <button id="btn_close">close</button>
           </div>
         </div>
       </div>
-      <!-- Sidebar Javascript -->
-      <script src="resources/L.Control.Sidebar.js"></script>
-      
-      <!-- Map Javascript -->
+      <!-- Splash screen -->
+      <div class="intro">
+        <h1 class="logo_splash">
+          <span class="logo_span">edmonton</span><span class="logo_span">sound</span><span class="logo_span">map.</span>
+        </h1>
+        </div>      
       <script src="resources/index_script.js"></script>
     </div>
   </body>

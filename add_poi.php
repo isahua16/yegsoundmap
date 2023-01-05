@@ -79,10 +79,8 @@ if (isset($_POST["user"])) {
 if (isset($_POST["terms"])) {
     $terms=$_POST["terms"];
 } else {
-    $terms="disagree";
+    $terms=0;
 }
-
-// $db = new PDO("pgsql:host=localhost;port=5432;dbname=yegsoundmap;", "postgres","isahua9261");
 
 $sql = $pdo->prepare("INSERT INTO yeg_poi (geom, name, audio, date, description, userd, terms) VALUES ((st_setsrid(st_makepoint(:lng, :lat), 4326)), :nm, :ad, :dt, :des, :ur, :tm)");
 

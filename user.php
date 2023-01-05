@@ -13,80 +13,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include "includes/header.php" ?>
-  <body>
-    <div class="container">  
+  <body> 
     <?php include "includes/nav.php" ?>
     <?php 
       show_msg();  
         ?>       
       <div class="content">
-        <div id="map">&nbsp;</div>
+        <div id="map"></div>
         <div id="sidebar">
-          <?php echo "<p>Logged in as {$username}</p>"; ?>
           <h2 class="title">Locations</h2>
         </div>
       </div>
-
+      <!-- Submission modal  -->
       <div id="modal_form" class="modal">
-        <div class="modal_content">
-          <div class="form_group">
+        <div class="modal_content_submission">
+          <div class="form_fields">
+          <h2> Submission form </h2>          
+          <label for="user">Recordist Name</label>  
           <input
               required
               type="text"
               class="field"
               id="user"
               value="<?php echo $username ?>"
-              placeholder="Contributor Name"
-            />  
-          
+            />          
+          <label for="name">Location</label> 
           <input
               required
               type="text"
               class="field"
               id="name"
-              placeholder="Location Name"
-            />
-
-            <input
+            />            
+            <label for="description">Description (weather, time, event, etc.)</label>
+            <textarea rows="5" cols="10" 
               required
-              type="textarea"
               class="field"
-              id="description"
-              placeholder="Description (Weather, Time, Event, etc.)"
-            />
-
+              id="description" style="resize: none;"></textarea>           
+            <label for="date">Date recorded</label> 
             <input required type="date" class="field" id="date" />
-
             <input
               required
               type="text"
               class="field"
               id="latitude"
-              placeholder="Latitude"
             />
-
             <input
               required
               type="text"
               class="field"
               id="longitude"
-              placeholder="Longitude"
             />
-
-            <input
-              required
-              type="checkbox"
-              class="field"
-              id="terms"
-              value="1"
-            />
-
+            <div class="agree">
+              <input
+                required
+                type="checkbox"
+                class="field"
+                id="terms"
+                value="1"
+              />
+              <label for="terms"> I agree to the <a class="link" href="<?php echo $user_page;?> "target=”_blank”>terms and conditions</a> as set out by the user agreement</label>
+            </div>
             <input
               required
               type="file"
               id="audio"
               name="audio"
-              accept=".wav, .mp3, .ogg, .mp4a, .aac"
+              accept=".wav, .mp3, .ogg, .m4a"
               />
               <div id="status"></div>
           </div>
@@ -95,20 +87,14 @@
         </div>
       </div>
       
-      <!-- welcome modal -->
-      <div id="modal_welcome" class="modal">
-        <div class="modal_content">
-          <div class="form_group">
-          <img src="media/logo_with_text.png" alt="logo" class="logo" />
-            <button id="btn_close_modal">Take me to the map</button>
-            <button id="btn_login">I am to upload my sounds</button>
+      <!-- Info modal -->
+      <div id="modal_faq" class="modal">
+        <div class="modal_content_faq">
+          <div class="faq_group">
+            <button id="btn_close">close</button>
           </div>
         </div>
-      </div>
-  
-      <!-- Map Javascript -->
+      </div>  
       <script src="resources/user_script.js"></script>
-
-    </div>
   </body>
 </html>
