@@ -104,7 +104,7 @@ a:hover {
 }
 
 #sidebar {
-  flex: 0 1 auto;
+  flex: 0 1 300px;
   display: none;
   flex-direction: column;
   gap: 5px;

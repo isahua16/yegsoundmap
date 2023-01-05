@@ -85,7 +85,7 @@ $(document).ready(function () {
     collapsed: true,
     placeholder: "Search...",
     defaultMarkGeocode: false,
-    errorMessage: "No result. Try right-clicking at desired location.",
+    errorMessage: "No result",
     geocoder: new L.Control.Geocoder.Nominatim({
       geocodingQueryParams: {
         countrycodes: "CA",
@@ -125,6 +125,7 @@ $(document).ready(function () {
 //Checks screen resize events and updates the sidebar button accordingly
 $(window).on("resize", function () {
   if ($(window).width() < 800) {
+    $("#sidebar").hide();
     sidebarBtn.disable();
   } else {
     sidebarBtn.enable();

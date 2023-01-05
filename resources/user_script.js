@@ -16,7 +16,6 @@ let corner1,
   marker,
   poi,
   formData,
-  sidebar,
   geocoder,
   faqBtn,
   sidebarBtn;
@@ -115,6 +114,7 @@ $(document).ready(function () {
 //Checks screen resize events and updates the sidebar button accordingly
 $(window).on("resize", function () {
   if ($(window).width() < 800) {
+    $("#sidebar").hide();
     sidebarBtn.disable();
   } else {
     sidebarBtn.enable();
