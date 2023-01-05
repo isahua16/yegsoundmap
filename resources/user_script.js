@@ -19,10 +19,7 @@ let corner1,
   sidebar,
   geocoder,
   faqBtn,
-  sidebarBtn,
-  intro,
-  logoSplash,
-  logoSpan;
+  sidebarBtn;
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -31,27 +28,6 @@ $(document).ready(function () {
   intro = document.querySelector(".intro");
   logoSplash = document.querySelector(".logo_splash");
   logoSpan = document.querySelectorAll(".logo_span");
-
-  setTimeout(() => {
-    logoSpan.forEach((span, idx) => {
-      setTimeout(() => {
-        span.classList.add("active");
-      }, (idx + 1) * 400);
-    });
-
-    setTimeout(() => {
-      logoSpan.forEach((span, idx) => {
-        setTimeout(() => {
-          span.classList.remove("active");
-          span.classList.add("fade");
-        }, (idx + 1) * 50);
-      });
-    }, 2000);
-
-    setTimeout(() => {
-      intro.style.top = "-100vh";
-    }, 2300);
-  });
 
   //Initialize leaflet map
   mapInit();
@@ -304,7 +280,7 @@ function setPopupContent(feature) {
     feature.properties.description +
     `</p><audio class="audio"
       controls
-      controlslist="nodownload noremoteplayback noplaybackrate"
+      controlslist="nodownload noremoteplayback noplaybackrate" autoplay="true"
       src="` +
     feature.properties.audio +
     `"><a href="` +

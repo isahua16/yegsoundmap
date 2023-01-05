@@ -99,36 +99,31 @@
         ?>
     </div>
     <form id="register_form" method="post" role="form" >
-        <div class="form-group">
+        <div class="register_form">
+        <h2> Sign up </h2>    
             <input type="text" name="firstname" id="firstname" tabindex="1" class="field" placeholder="First Name" value="<?php echo $fname ?>" required >
-        </div>
-        <div class="form-group">
+            
             <input type="text" name="lastname" id="lastname" tabindex="2" class="field" placeholder="Last Name" value="<?php echo $lname ?>" required >
-        </div>
-        <div class="form-group">
+            
+            
             <input type="text" name="username" id="username" tabindex="3" class="field" placeholder="Username" value="<?php echo $uname ?>" required >
-        </div>
-        <div class="form-group">
+            
+            
             <input type="email" name="email" id="register_email" tabindex="4" class="field" placeholder="Email Address" value="<?php echo $eml ?>" required >
-        </div>
-        <div class="form-group">
+            
+            
             <input type="password" name="password" id="password" tabindex="5" class="field" placeholder="Password" required>
-        </div>
-        <div class="form-group">
+            
+            
             <input type="password" name="password_confirm" id="confirm-password" tabindex="6" class="field" placeholder="Confirm Password" required>
+            
+            <div class="agreement">
+                <input type="checkbox" name="terms" id="terms" class="field" value="1" required>
+                <label for="terms"> I agree to the <a class="link-underline" href="<?php echo $user_page;?> "target=”_blank”>terms and conditions</a> as set out by the user agreement</label>
+            </div>
+            <div>
+                <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="btn_register" value="Register Now">                     
+            </div>
         </div>
-        <div class="form-group">
-            <iframe src="media/logo.png" frameborder="0"></iframe>
-        </div>
-        <div class="form-group">
-            <input type="checkbox" name="terms" id="terms" class="field" value="1" required>
-            <label for="terms"> I agree to the terms and conditions as set out by the user agreement </label>
-        </div>
-
-
-        <div class="form-group">
-            <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="btn_register" value="Register Now">
-                          
-        </div>
-    </form>
-</body>
+        </form>
+    </body>

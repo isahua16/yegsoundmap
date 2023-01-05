@@ -24,11 +24,11 @@
           <h2 class="title">Locations</h2>
         </div>
       </div>
-
+      <!-- Submission modal  -->
       <div id="modal_form" class="modal">
-        <div class="modal_content">
+        <div class="modal_content_submission">
           <div class="form_fields">
-          
+          <h2> Submission form </h2>          
           <label for="user">Recordist Name</label>  
           <input
               required
@@ -36,39 +36,33 @@
               class="field"
               id="user"
               value="<?php echo $username ?>"
-            />
-          
+            />          
           <label for="name">Location</label> 
           <input
               required
               type="text"
               class="field"
               id="name"
-            />
-            
+            />            
             <label for="description">Description (weather, time, event, etc.)</label>
             <textarea rows="5" cols="10" 
               required
               class="field"
-              id="description" style="resize: none;"></textarea>
-            
+              id="description" style="resize: none;"></textarea>           
             <label for="date">Date recorded</label> 
             <input required type="date" class="field" id="date" />
-
             <input
               required
               type="text"
               class="field"
               id="latitude"
             />
-
             <input
               required
               type="text"
               class="field"
               id="longitude"
             />
-
             <div class="agree">
               <input
                 required
@@ -79,7 +73,6 @@
               />
               <label for="terms"> I agree to the <a class="link" href="<?php echo $user_page;?> "target=”_blank”>terms and conditions</a> as set out by the user agreement</label>
             </div>
-
             <input
               required
               type="file"
@@ -94,26 +87,14 @@
         </div>
       </div>
       
-      <!-- welcome modal -->
+      <!-- Info modal -->
       <div id="modal_faq" class="modal">
-        <div class="modal_content">
-          <div class="form_group">
+        <div class="modal_content_faq">
+          <div class="faq_group">
             <button id="btn_close">close</button>
           </div>
         </div>
-      </div>
-
-      <div class="intro">
-        <h1 class="logo_splash">
-
-          <span class="logo_span">edmonton </span><span class="logo_span">sound </span><span class="logo_span"> map.</span>
-        </h1>
-        </div>
-        
-  
-      <!-- Map Javascript -->
+      </div>  
       <script src="resources/user_script.js"></script>
-
-    
   </body>
 </html>

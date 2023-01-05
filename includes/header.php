@@ -19,9 +19,6 @@
     <!-- Geocoder styles -->
     <link rel="stylesheet" href="css/Control.Geocoder.css" />
 
-    <!-- Sidebar styles -->
-    <link rel="stylesheet" href="css/L.Control.Sidebar.css" />
-
     <!-- Leaflet library -->
     <script
       src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
@@ -34,9 +31,6 @@
 
     <!-- Leaflet ajax plugin -->
     <script src="resources/leaflet.ajax.min.js"></script>
-
-    <!-- Sidebar library -->
-    <script src="resources/L.Control.Sidebar.js"></script>
     
     <!-- Geocoder library -->
     <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
