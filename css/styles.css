@@ -227,7 +227,8 @@ a:hover {
 /* Mobile */
 @media (max-width: 800px) {
   #map {
-    flex: 1 1 auto;
+    flex: 1 1 100%;
+    height: calc(100vh - 30px);
   }
 
   #sidebar {
