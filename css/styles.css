@@ -6,7 +6,6 @@
 */
 
 /* Global */
-
 * {
   margin: 0;
   padding: 0;
@@ -22,7 +21,6 @@ body {
 }
 
 /* Header */
-
 .header {
   font-size: 16px;
   display: flex;
@@ -30,6 +28,12 @@ body {
   justify-content: space-between;
 }
 
+.logo {
+  width: 32px;
+  height: 32px;
+}
+
+/* Links */
 a {
   color: white;
 }
@@ -46,13 +50,15 @@ a:hover {
   color: #7bc74d;
 }
 
-.logo {
-  width: 32px;
-  height: 32px;
+.link {
+  text-decoration: none;
+}
+
+.link-underline {
+  text-decoration: underline;
 }
 
 /* Splash Screen */
-
 .intro {
   position: fixed;
   z-index: 1000;
@@ -91,7 +97,7 @@ a:hover {
   transition: ease-in-out 0.5s;
 }
 
-/* Map */
+/* Main section */
 .content {
   display: flex;
   gap: 16px;
@@ -101,6 +107,10 @@ a:hover {
 #map {
   flex: 1 0 70%;
   height: 100vh;
+}
+
+.easy-button-button.leaflet-bar-part.leaflet-interactive.unnamed-state-active.disabled {
+  display: none;
 }
 
 #sidebar {
@@ -121,9 +131,7 @@ a:hover {
 }
 
 /* Popup */
-
 .popup {
-  /* style the popup here */
 }
 
 .audio {
@@ -153,26 +161,6 @@ a:hover {
   padding-bottom: 10%;
 }
 
-.link {
-  text-decoration: none;
-}
-
-.link-underline {
-  text-decoration: underline;
-}
-
-#modal_faq {
-  display: none;
-  z-index: 1000;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.4);
-  position: fixed;
-  top: 0;
-  left: 0;
-  overflow: auto;
-}
-
 .form_fields {
   display: flex;
   flex-direction: column;
@@ -185,6 +173,18 @@ a:hover {
 
 #longitude {
   display: none;
+}
+
+#modal_faq {
+  display: none;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
 }
 
 /* Login page */
@@ -236,8 +236,4 @@ a:hover {
   #sidebar {
     display: none;
   }
-
-/* Easy Button */
-.easy-button-button.leaflet-bar-part.leaflet-interactive.unnamed-state-active.disabled {
-  display: none;
 }
