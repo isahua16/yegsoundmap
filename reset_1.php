@@ -9,7 +9,7 @@
 
             $row = return_field_data($pdo, "users", "username", $username);
             
-            $body = "Please go to https://{$_SERVER['SERVER_NAME']}/reset_2.php?user={$username}&code={$row['validationcode']} to reset your password";
+            $body = "Please go to https://{$_SERVER['SERVER_NAME']}/reset_2.php?user={$username}&code={$row['validationcode']} to reset your password. If you did not initiate the password reset, you can ignore this message.";
                 
             send_mail($row['email'], "Reset Password", $body, $from_email, $reply_email);
             set_msg("Please check your email for the reset url. Don't forget to check your spam folder.");
