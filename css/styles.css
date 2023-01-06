@@ -19,6 +19,7 @@ body {
   color: white;
   background-color: #292929;
   overflow: hidden;
+  height: calc(100% - 30px);
 }
 
 /* Header */
@@ -28,6 +29,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 30px;
 }
 
 a {
@@ -95,11 +97,12 @@ a:hover {
 .content {
   display: flex;
   gap: 16px;
+  height: 100%;
 }
 
 #map {
   flex: 1 0 70%;
-  max-height: 100vh;
+  max-height: 100%;
 }
 
 #sidebar {
