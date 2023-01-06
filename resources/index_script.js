@@ -55,7 +55,7 @@ $(document).ready(function () {
   corner2 = L.latLng(53.207677555890015, -114.39376831054688);
   bounds = L.latLngBounds(corner1, corner2);
 
-  map = L.map("map", { attributionControl: false })
+  map = L.map("map", { attributionControl: false, keyboard: false })
     .setView([53.53337, -113.50937], 11)
     .setMaxBounds(bounds);
 
