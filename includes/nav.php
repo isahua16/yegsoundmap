@@ -20,5 +20,5 @@ if(logged_in()) {
 }
 
 ?>
-<button class="debug">click here</button>
+
 </nav>  
