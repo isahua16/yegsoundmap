@@ -29,7 +29,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 30px;
 }
 
 a {
@@ -101,10 +100,11 @@ a:hover {
 
 #map {
   flex: 1 0 70%;
-  height: calc(100vh - 30px);
+  height: calc(70vh - 30px);
 }
 
 #sidebar {
+  /* dont use pixels */
   flex: 0 1 300px;
   display: none;
   flex-direction: column;
@@ -142,6 +142,7 @@ a:hover {
   left: 0;
   overflow: auto;
 }
+
 .modal_content_submission {
   text-align: left;
   width: 100%;
@@ -169,15 +170,6 @@ a:hover {
   top: 0;
   left: 0;
   overflow: auto;
-}
-
-.modal_content_faq {
-  text-align: left;
-  width: 100%;
-  height: 100%;
-  padding-top: 15%;
-  padding-left: 20%;
-  padding-right: 20%;
 }
 
 .form_fields {
