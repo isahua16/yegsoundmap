@@ -34,10 +34,8 @@
     
     <!-- Geocoder library -->
     <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
-    
-    <!-- Easy button library -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script> -->
 
+    <!-- Easy button library -->
     <script src="resources/easy-button.js">
       </script>
 
