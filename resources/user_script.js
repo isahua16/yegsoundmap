@@ -95,7 +95,7 @@ $(document).ready(function () {
   faqBtn = L.easyButton(
     `<img src="media/info-solid.svg" width="22px" height="22px" style="padding-top: 5px" class="icon-faq">`,
     function (btn, map) {
-      $("#modal_form").show();
+      $("#modal_faq").show();
     }
   ).addTo(map);
 
