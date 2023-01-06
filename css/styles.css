@@ -28,6 +28,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 
 a {
@@ -99,7 +102,7 @@ a:hover {
 
 #map {
   flex: 1 0 70%;
-  height: calc(70vh - 30px);
+  max-height: 100%;
 }
 
 #sidebar {
