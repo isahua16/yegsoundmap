@@ -28,6 +28,10 @@ $(document).ready(function () {
   logoSplash = document.querySelector(".logo_splash");
   logoSpan = document.querySelectorAll(".logo_span");
 
+  $(".debug").click(function () {
+    $("#modal_faq").show();
+  });
+
   //Initialize leaflet map
   mapInit();
   //Max bounds init

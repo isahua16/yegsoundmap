@@ -9,7 +9,6 @@ if(logged_in()) {
 
   echo "<a href='{$logout_page}'>Logout</a>";
 
-
 } else {
 
   echo "<a href='{$public_page}'><img class='logo' src='media/logo.png' alt='Edmonton Sound Map'/></a>";
@@ -21,4 +20,5 @@ if(logged_in()) {
 }
 
 ?>
+<button class="debug">click here</button>
 </nav>  
