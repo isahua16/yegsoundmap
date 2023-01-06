@@ -90,6 +90,10 @@ $(document).ready(function () {
 
   geocoder.addTo(map);
 
+  $(".leaflet-control-geocoder-form").on("blur", function () {
+    $(".header").focus();
+  });
+
   onGeocodingResult();
 
   faqBtn = L.easyButton(
