@@ -12,7 +12,6 @@
   padding: 0;
   box-sizing: border-box;
   line-height: 1;
-  font-size: 16px;
 }
 
 body {
@@ -22,11 +21,14 @@ body {
   overflow: hidden;
 }
 
-input, textarea {
+input,
+textarea {
   font-size: 16 px;
 }
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   font-size: 16px;
+}
 
 /* Header */
 
