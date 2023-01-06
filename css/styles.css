@@ -19,7 +19,6 @@ body {
   color: white;
   background-color: #292929;
   overflow: hidden;
-  touch-action: none;
 }
 
 /* Header */
