@@ -29,14 +29,14 @@ input {
   font-size: 14px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: 50px;
+  gap: 50px;
 }
 
 .nav_item {
-  flex: 0 1 auto;
-  padding-left: 12px;
-  padding-right: 12px;
+  flex: 0 0 auto;
+  padding: 12px 12px;
 }
 .logo {
   width: 32px;
@@ -103,7 +103,7 @@ a:hover {
   display: flex;
   bottom: -20px;
   opacity: 0;
-  flex: 1 1 auto;
+  flex: 0 0 auto;
 }
 
 .logo_span.active {
@@ -180,16 +180,16 @@ a:hover {
   text-align: left;
   width: 100%;
   height: 100%;
-  padding-top: 15%;
-  padding-left: 20%;
-  padding-right: 20%;
+  padding-top: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
   padding-bottom: 10%;
 }
 
 .form_fields {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 10px;
 }
 
 #latitude {
@@ -265,6 +265,7 @@ a:hover {
   h1 {
     font-size: 20px;
   }
+
   .logo_img_splash {
     width: 48px;
     height: 48px;
