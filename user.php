@@ -73,8 +73,7 @@
               />
               <label for="terms"> I agree to the <a class="link" href="<?php echo $user_page;?> "target=”_blank”>terms and conditions</a> as set out by the user agreement</label>
             </div>
-            <div>
-
+            
               <input
               required
               type="file"
@@ -82,8 +81,8 @@
               name="audio"
               accept=".wav, .mp3, .ogg, .m4a"
               />
-              <button class="clear_file">x</button>
-            </div>
+              <span><button class="clear_file">x</button></span>
+          
               
               <div id="status"></div>
           </div>
