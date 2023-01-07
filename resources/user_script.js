@@ -129,18 +129,7 @@ $("#btn_close").click(function () {
   $("#modal_faq").hide();
 });
 
-$(".clear_file").click(clearFileUpload(e));
-
-function clearFileUpload(e) {
-  e.preventDefault();
-  $("#audio").replaceWith(`<input
-  required
-  type="file"
-  id="audio"
-  name="audio"
-  accept=".wav, .mp3, .ogg, .m4a"
-  />`);
-}
+$(".clear_file").click(clearFileUpload);
 
 function mapInit() {
   $.ajax({
@@ -223,12 +212,23 @@ function sendDataToServer() {
   }
 }
 
+function clearFileUpload(event) {
+  event.preventDefault();
+  $("#audio").replaceWith(`<input
+  required
+  type="file"
+  id="audio"
+  name="audio"
+  accept=".wav, .mp3, .ogg, .m4a"
+  />`);
+}
+
 // Hide modal form on cancel button click
 function cancelBtnFunction() {
   $("#modal_form").hide();
   $("#description").val("");
   $("#status").html("");
-  clearFileUpload(e);
+  clearFileUpload(event);
 }
 
 //Modal popup on geocoding result

@@ -74,6 +74,7 @@ a:hover {
 }
 
 /* Splash Screen */
+
 .intro {
   position: fixed;
   z-index: 1000;
@@ -91,13 +92,18 @@ a:hover {
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
 }
 
 .logo_span {
   position: relative;
-  display: inline-block;
+  display: flex;
   bottom: -20px;
   opacity: 0;
+  flex: 1 1 auto;
 }
 
 .logo_span.active {
@@ -110,6 +116,10 @@ a:hover {
   bottom: 150px;
   opacity: 0px;
   transition: ease-in-out 0.5s;
+}
+.logo_img_splash {
+  width: 64px;
+  height: 64px;
 }
 
 /* Main section */
@@ -250,5 +260,16 @@ a:hover {
 
   #sidebar {
     display: none;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+  .logo_img_splash {
+    width: 48px;
+    height: 48px;
+  }
+  .logo_splash {
+    gap: 16px;
   }
 }

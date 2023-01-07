@@ -35,7 +35,8 @@
       <!-- Splash screen -->
       <div class="intro">
         <h1 class="logo_splash">
-          <span class="logo_span">edmonton&nbsp;</span><span class="logo_span">sound&nbsp;</span><span class="logo_span">map.</span>
+          <span class="logo_span"><img class='logo_img_splash' src='media/logo.png' alt='Edmonton Sound Map'/>&nbsp;</span>
+          <span class="logo_span">edmonton&nbsp;sound&nbsp;map</span>
         </h1>
       </div>  
       
