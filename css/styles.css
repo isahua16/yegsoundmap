@@ -103,7 +103,7 @@ a:hover {
   display: flex;
   bottom: -20px;
   opacity: 0;
-  flex: 1 1 auto;
+  flex: 0 0 auto;
 }
 
 .logo_span.active {
@@ -265,6 +265,7 @@ a:hover {
   h1 {
     font-size: 20px;
   }
+
   .logo_img_splash {
     width: 48px;
     height: 48px;
