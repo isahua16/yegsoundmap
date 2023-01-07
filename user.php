@@ -29,7 +29,7 @@
         <div class="modal_content_submission">
           <div class="form_fields">
           <h2> Submission form </h2>          
-          <label for="user">Recordist Name</label>  
+          <label for="user">Recordist name</label>  
           <input
               required
               type="text"

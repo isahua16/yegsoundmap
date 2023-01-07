@@ -16,7 +16,7 @@
         ?>  
      
       <div class="content">
-        <div id="map">&nbsp;</div>
+        <div id="map"></div>
         <div id="sidebar">
           <h2 class="title">Locations</h2>
         </div>
@@ -35,7 +35,7 @@
       <!-- Splash screen -->
       <div class="intro">
         <h1 class="logo_splash">
-          <span class="logo_span">edmonton</span><span class="logo_span">sound</span><span class="logo_span">map.</span>
+          <span class="logo_span">edmonton&nbsp;</span><span class="logo_span">sound&nbsp;</span><span class="logo_span">map.</span>
         </h1>
       </div>  
       
