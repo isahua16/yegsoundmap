@@ -129,6 +129,10 @@ $("#btn_close").click(function () {
   $("#modal_faq").hide();
 });
 
+$(".clear_file").click(function () {
+  $("#audio").val("");
+});
+
 function mapInit() {
   $.ajax({
     url: "load_poi.php",
@@ -215,6 +219,7 @@ function cancelBtnFunction() {
   $("#modal_form").hide();
   $("#description").val("");
   $("#status").html("");
+  $("#audio").val("");
 }
 
 //Modal popup on geocoding result
