@@ -3,7 +3,7 @@
 <?php 
 if(logged_in()) {
 
-  echo "<div class='nav_item'>Hello, <a class='username' href='#'>{$username}!</a></div>";
+  echo "<div class='nav_item'>Hello, <a class='username' href='#'>{$username}</a>!</div>";
   
   echo "<a class='nav_item' href='{$user_page}'><img class='logo' src='media/logo.png' alt='Edmonton Sound Map'/></a>";
   
