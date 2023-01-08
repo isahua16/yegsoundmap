@@ -28,10 +28,6 @@ $(document).ready(function () {
   logoSplash = document.querySelector(".logo_splash");
   logoSpan = document.querySelectorAll(".logo_span");
 
-  $(".debug").click(function () {
-    $("#modal_faq").show();
-  });
-
   //Initialize leaflet map
   mapInit();
   //Max bounds init
@@ -87,9 +83,7 @@ $(document).ready(function () {
       },
     }),
   });
-
   geocoder.addTo(map);
-
   onGeocodingResult();
 
   faqBtn = L.easyButton(
@@ -124,11 +118,12 @@ $(window).on("resize", function () {
     sidebarBtn.enable();
   }
 });
-//Adds and event listener to close the FAQ modal
+//Adds an event listener to close the FAQ modal
 $("#btn_close").click(function () {
   $("#modal_faq").hide();
 });
 
+//Adds an event listener to the x button in the submission modal
 $(".clear_file").click(clearFileUpload);
 
 function mapInit() {
@@ -165,8 +160,11 @@ function sendDataToServer() {
   ) {
     alert("Please fill in all the fields");
   } else {
+    //Disable save button until reset.
+    $("#btn_save").prop("disabled", true);
+
     //Prepare form data to be sent thru ajax call
-    formData = new FormData($("form[id='poi_submission']")[0]);
+    formData = new FormData($("form[id='poi']")[0]);
 
     formData.append("poi", $("#audio")[0].files[0]);
     formData.append("latitude", $("#latitude").val());
@@ -192,7 +190,6 @@ function sendDataToServer() {
           function (evt) {
             if (evt.lengthComputable) {
               let percentComplete = evt.loaded / evt.total;
-              console.log(percentComplete);
               $("#status").html(
                 `Uploading -> ` + Math.round(percentComplete * 100) + `%`
               );
@@ -203,10 +200,7 @@ function sendDataToServer() {
         return xhr;
       },
       success: function (response) {
-        $("#status").html("Upload complete");
-        $("#audio").val("");
-        mapInit();
-        cancelBtnFunction();
+        location.reload();
       },
     });
   }
@@ -228,6 +222,7 @@ function cancelBtnFunction() {
   $("#modal_form").hide();
   $("#description").val("");
   $("#status").html("");
+  $("#date").val("");
   clearFileUpload(event);
 }
 
