@@ -2,36 +2,35 @@
 
 <?php
 
-if (isset($_FILES["poi"]) && $_FILES['poi']['error'] === UPLOAD_ERR_OK) {
+if (isset($_FILES['poi']) && $_FILES['poi']['error'] < 1) {
 
     $fileTmpPath = $_FILES['poi']['tmp_name'];
-    $fileName = $_FILES['poi']['name'];
     $fileSize = $_FILES['poi']['size'];
-    $fileType = $_FILES['poi']['type'];
+    $fileName = $_FILES['poi']['name'];
     $fileNameCmps = explode(".", $fileName);
     $fileExtension = strtolower(end($fileNameCmps));
     $newFileName = round(microtime(true)) . '.' . $fileExtension;
 
     $allowedExtensions = array('wav', 'mp3', 'ogg', 'm4a');
 
-    if (in_array($fileExtension, $allowedExtensions) && $fileSize < 50000000) {
+    if (in_array($fileExtension, $allowedExtensions) && $fileSize < 64000000) {
         
         $uploadFileDir = 'media/';
         $dest_path = $uploadFileDir . $newFileName;
         
             if(move_uploaded_file($fileTmpPath, $dest_path)) 
             {
-                echo 'File was successfully uploaded to the server.';
+                set_msg("File was successfully uploaded to the server.");
+
             } else {
-                echo 'There was an error moving the file to the server directory';
+                set_msg("There was an error moving the file to the server directory");
             }
-         }  else { 
-            echo 'Upload failed. Please make sure that your file is in either .wav, .mp3, .m4a, or .ogg format, and less than 20MB.';
+    }  else { 
+            set_msg("Upload failed. Please make sure that your file is in either .wav, .mp3, .m4a, or .ogg format, and less than 100MB.");
         }
-    } else {
-        $message = 'There is an error in the file upload.';
-        $message .= 'Error:' . $_FILES['poi']['error'];
-        echo $message;
+} else {
+    $message = "There is a problem with the upload";    
+    set_msg($message);
     }
 
 if (isset($_POST["latitude"]) && is_numeric($_POST["latitude"])) {
@@ -87,9 +86,9 @@ $sql = $pdo->prepare("INSERT INTO yeg_poi (geom, name, audio, date, description,
 $params = ["nm"=>$name,"lat"=>$latitude,"lng"=>$longitude,"ad"=>$audio,"dt"=>$date,"des"=>$description,"ur"=>$user,"tm"=>$terms];
 
 if ($sql->execute($params)) {
-    echo "Your submission was succesfully added to the map.";
+    set_msg("Your submission was succesfully added to the map.");
 } else {
-    echo var_dump($sql->errorInfo());
+    set_msg(var_dump($sql->errorInfo()));
 };
 
 ?>

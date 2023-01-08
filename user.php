@@ -73,8 +73,8 @@
               />
               <label for="terms"> I agree to the <a class="link" href="<?php echo $user_page;?> "target=”_blank”>terms and conditions</a> as set out by the user agreement</label>
             </div>
-            <div>
-
+            
+            <div class="file_upload">
               <input
               required
               type="file"
