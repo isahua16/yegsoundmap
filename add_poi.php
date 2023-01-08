@@ -5,7 +5,6 @@
 if (isset($_FILES['poi']) && $_FILES['poi']['error'] < 1) {
 
     $fileTmpPath = $_FILES['poi']['tmp_name'];
-    $fileSize = $_FILES['poi']['size'];
     $fileName = $_FILES['poi']['name'];
     $fileNameCmps = explode(".", $fileName);
     $fileExtension = strtolower(end($fileNameCmps));
@@ -13,24 +12,24 @@ if (isset($_FILES['poi']) && $_FILES['poi']['error'] < 1) {
 
     $allowedExtensions = array('wav', 'mp3', 'ogg', 'm4a');
 
-    if (in_array($fileExtension, $allowedExtensions) && $fileSize < 64000000) {
+    if (in_array($fileExtension, $allowedExtensions)) {
         
         $uploadFileDir = 'media/';
         $dest_path = $uploadFileDir . $newFileName;
         
             if(move_uploaded_file($fileTmpPath, $dest_path)) 
             {
-                set_msg("File was successfully uploaded to the server.");
+                set_msg("Your submission was successfully uploaded to the map.");
 
             } else {
                 set_msg("There was an error moving the file to the server directory");
             }
     }  else { 
-            set_msg("Upload failed. Please make sure that your file is in either .wav, .mp3, .m4a, or .ogg format, and less than 100MB.");
+            set_msg("There was an error with your file format.");
         }
 } else {
-    $message = "There is a problem with the upload";    
-    set_msg($message);
+ 
+    set_msg("Upload failed. Make sure your file is less than 60MB and in an accepted format. See our info panel for more details");
     }
 
 if (isset($_POST["latitude"]) && is_numeric($_POST["latitude"])) {

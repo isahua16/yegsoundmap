@@ -200,6 +200,10 @@ a:hover {
   display: none;
 }
 
+.file_upload {
+  display: flex;
+}
+
 #modal_faq {
   display: none;
   z-index: 1000;

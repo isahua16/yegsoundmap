@@ -160,6 +160,9 @@ function sendDataToServer() {
   ) {
     alert("Please fill in all the fields");
   } else {
+    //Disable save button until reset.
+    $("#btn_save").prop("disabled", true);
+
     //Prepare form data to be sent thru ajax call
     formData = new FormData($("form[id='poi']")[0]);
 
@@ -190,7 +193,6 @@ function sendDataToServer() {
               $("#status").html(
                 `Uploading -> ` + Math.round(percentComplete * 100) + `%`
               );
-              "#btn_save".prop("disabled", true);
             }
           },
           false
