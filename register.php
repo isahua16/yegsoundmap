@@ -20,35 +20,35 @@
         }
         
         if(strlen($fname)<=1) {
-            $error[] = "Last name must be at least 2 characters long";
+            set_msg("Last name must be at least 2 characters long");
         }
         if(strlen($lname)<=1) {
-            $error[] = "Last name must be at least 2 characters long";
+            set_msg("Last name must be at least 2 characters long");
         }
         if(strlen($uname)<=3) {
-            $error[] = "Username must be at least 4 characters long";
+            set_msg("Username must be at least 4 characters long");
         }
         if(strlen($pwd)<6) {
-            $error[] = "Password must be at least 6 characters long";
+            set_msg("Password must be at least 6 characters long");
         }
         if (!preg_match($spcl_char, $pwd))
             {
-                $error[] = "Password must contain at least one special character";
+                set_msg("Password must contain at least one special character");
             }
         if ($pwd != $pwd_conf) {
-            $error[] = "Passwords do not match";
+            set_msg("Passwords do not match");
         }
 
         if (count_field_val($pdo, "users", "username", $uname)!=0) {
-            $error[]= "Username {$uname} already exists";
+            set_msg("Username {$uname} already exists");
         }
 
         if (count_field_val($pdo, "users", "email", $eml)!=0) {
-            $error[]= "Email {$eml} is already registered";
+            set_msg("Email {$eml} is already registered");
         }
         
         if($tms===0){
-            $error[]= "You must agree to the user agreement in order to register";
+            set_msg("You must agree to the user agreement in order to register");
         }
 
         if(!isset($error)) {
@@ -68,7 +68,7 @@
                 redirect("index.php");
                 
             } catch(PDOException $e) {
-                echo "Error: " . $e->getMessage();
+                set_msg($e->getMessage());
             }       
         }     
         
@@ -87,17 +87,6 @@
   <body>
     <div class="register_container">    
     <?php include "includes/nav.php" ?>
-
-    <div class="message">
-        <?php
-        show_msg();
-        if (isset($error)) {
-            foreach ($error as $msg) {
-                echo "<h4 class='message'>{$msg}.</h4><br>";
-            }
-        }
-        ?>
-    </div>
     <form id="register_form" method="post" role="form" >
         <div class="register_form">
         <h2> Sign up </h2>    
@@ -122,7 +111,7 @@
                 <label for="terms"> I agree to the <a class="link-underline" href="<?php echo $user_page;?> "target=”_blank”>terms and conditions</a> as set out by the user agreement</label>
             </div>
             <div>
-                <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="btn_register" value="Register Now">                     
+                <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="btn_register button" value="Register Now">                     
             </div>
         </div>
         </form>

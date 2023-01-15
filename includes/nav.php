@@ -3,9 +3,9 @@
 <?php 
 if(logged_in()) {
 
-  echo "<div class='nav_item'>Hello, <a class='username' href='#'>{$username}!</a></div>";
+  echo "<div class='nav_item'>Hello, <a class='username' href='#'>{$username}</a>!</div>";
   
-  echo "<a class='nav_item' href='{$user_page}'><img class='logo' src='media/logo.png' alt='Edmonton Sound Map'/></a>";
+  echo "<a class='nav_item' href='{$user_page}'><img class='logo' style='height:25, width:32' src='media/logo.png' alt='Edmonton Sound Map'/></a>";
   
   echo "<a class='nav_item' href='{$logout_page}'>Logout</a>";
   
@@ -22,5 +22,10 @@ if(logged_in()) {
 }
 
 ?>
+</nav>
 
-</nav>  
+<div class="message_container">
+    <?php 
+      show_msg();  
+        ?>       
+    </div>  

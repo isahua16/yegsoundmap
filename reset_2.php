@@ -55,12 +55,6 @@
     <body>
         <div class="register_container">    
         <?php include "includes/nav.php" ?>
-
-        <div class="message">
-            <?php
-            show_msg();
-            ?>
-        </div>
         <form id="register_form" method="post" role="form">
             <div class="reset_form">
             <h2> Create a new password </h2>

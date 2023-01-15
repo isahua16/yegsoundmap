@@ -65,7 +65,7 @@ $(document).ready(function () {
   //Marker Icon
   myIcon = L.icon({
     iconUrl: "media/logo.png",
-    iconSize: [20, 20],
+    iconSize: [25, 25],
   });
 
   //create geocoding search bar
@@ -254,7 +254,7 @@ function onRightClick(e) {
 
 // Create markers from GeoJson
 function myCreateEachMarkerFunction(feature, latlng) {
-  btn = `<button id="zoomTo` + feature.properties.id;
+  btn = `<button style="width:100%;" id="zoomTo` + feature.properties.id;
   btn += `" class="location">`;
   btn += feature.properties.name + `</button>`;
   $("#sidebar").append(btn);
