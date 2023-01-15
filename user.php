@@ -13,16 +13,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include "includes/header.php" ?>
+<title>Member View - Edmonton Sound Map</title>
+<meta name="description" content="Submit your own field recordings to Edmonton Sound Map.">
+<meta name=”robots” content="noindex, follow">
+</head>
   <body> 
     <?php include "includes/nav.php" ?>
-      <div class="content">
-        <div id="map"></div>
-        <div id="sidebar">
+      <main class="content">
+        <section id="map"></section>
+        <aside id="sidebar">
           <h2 class="title">Locations</h2>
-        </div>
-      </div>
+          <div id="aside_scroll">
+          </div>
+        </aside>
+      </main>
       <!-- Submission modal  -->
-      <div id="modal_form" class="modal">
+      <menu id="modal_form" class="modal">
         <div class="modal_content_submission">
           <div class="form_fields">
           <h2> Submission form </h2>          
@@ -89,7 +95,7 @@
           <button id="btn_save" class="button">Save</button>
           <button id="btn_cancel" class="button">Cancel</button>
         </div>
-      </div>
+      </menu>
       
       <!-- Info modal -->
       <div id="modal_faq" class="modal">

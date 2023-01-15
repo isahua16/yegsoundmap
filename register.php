@@ -84,6 +84,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include "includes/header.php" ?>
+<title>Sign Up - Edmonton Sound Map</title>
+<meta name="description" content="Register for your Edmonton Sound Map account to start submitting your field recordings of Edmonton, Canada to the map.">
+
+
+</head>
   <body>
     <div class="register_container">    
     <?php include "includes/nav.php" ?>

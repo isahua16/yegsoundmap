@@ -18,15 +18,19 @@ let corner1,
   formData,
   geocoder,
   faqBtn,
-  sidebarBtn;
+  sidebarBtn,
+  errorMessage;
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
 //Waits until all html and css before running the code
 $(document).ready(function () {
-  intro = document.querySelector(".intro");
-  logoSplash = document.querySelector(".logo_splash");
-  logoSpan = document.querySelectorAll(".logo_span");
+  errorMessage = document.querySelector(".message_container");
+
+  if (errorMessage != null) {
+    document.querySelector("#map").classList.add("error");
+    document.querySelector("#aside_scroll").classList.add("error2");
+  }
 
   //Initialize leaflet map
   mapInit();
@@ -254,10 +258,10 @@ function onRightClick(e) {
 
 // Create markers from GeoJson
 function myCreateEachMarkerFunction(feature, latlng) {
-  btn = `<button style="width:100%;" id="zoomTo` + feature.properties.id;
+  btn = `<button style="width:97%;" id="zoomTo` + feature.properties.id;
   btn += `" class="location">`;
   btn += feature.properties.name + `</button>`;
-  $("#sidebar").append(btn);
+  $("#aside_scroll").append(btn);
 
   //Add Zoom buttons for each feature
   $("#zoomTo" + feature.properties.id).click(function () {

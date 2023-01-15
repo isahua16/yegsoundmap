@@ -13,13 +13,59 @@
   line-height: 1;
 }
 
+html {
+  height: 100%;
+}
+
 body {
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: white;
   background-color: #292929;
+  height: 100%;
   overflow: hidden;
 }
 
+/* Header */
+
+.main_nav {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  list-style-type: none;
+  min-height: 3rem;
+}
+
+.nav_item {
+  flex: 0 0 auto;
+}
+
+.message_container {
+  display: flex;
+  min-height: 2rem;
+  background-color: #7bc74d;
+  justify-content: center;
+  align-items: center;
+}
+
+.message {
+  font-size: 14px;
+  text-align: center;
+  color: black;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+}
+
+.logo:hover {
+  transform: scale(1.15);
+  transition: all ease 500ms;
+}
+
+/* Buttons */
 .button {
   border: solid;
   border-color: #7bc74d;
@@ -41,43 +87,6 @@ input[type="file"] {
 
 input {
   font-size: 16px;
-}
-
-/* Header */
-.header {
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-  gap: 50px;
-}
-
-.nav_item {
-  flex: 0 0 auto;
-  padding: 12px 12px;
-}
-
-.message_container {
-  height: 16px;
-}
-
-h4 {
-  font-size: 14px;
-  color: #7bc74d;
-}
-
-.message {
-  text-align: center;
-}
-.logo {
-  width: 32px;
-  height: 32px;
-}
-
-.logo:hover {
-  transform: scale(1.15);
-  transition: all ease 500ms;
 }
 
 /* Links */
@@ -106,7 +115,6 @@ a:hover {
 }
 
 /* Splash Screen */
-
 .intro {
   position: fixed;
   z-index: 1000;
@@ -163,7 +171,11 @@ a:hover {
 
 #map {
   flex: 1 0 70%;
-  height: calc(100vh - 66px);
+  height: calc(100% - 3rem);
+}
+
+.error {
+  height: calc(100% - 5rem) !important;
 }
 
 .easy-button-button.leaflet-bar-part.leaflet-interactive.unnamed-state-active.disabled {
@@ -171,14 +183,24 @@ a:hover {
 }
 
 #sidebar {
-  /* dont use pixels */
   display: none;
-  font-size: 14px;
-  overflow: visible;
+  height: 100%;
 }
 
 #sidebar h2 {
   padding-bottom: 10px;
+  height: 2rem;
+}
+
+#aside_scroll {
+  font-size: 14px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100% - 5rem);
+}
+
+.error2 {
+  height: calc(100% - 7rem) !important;
 }
 
 .location:hover {
@@ -222,18 +244,14 @@ a:hover {
 
 .modal_content_submission {
   text-align: left;
-  width: 100%;
-  height: 100%;
-  padding-top: 10%;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-bottom: 10%;
+  width: 50%;
+  margin: 100px auto;
 }
 
 .form_fields {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 #latitude {
@@ -267,11 +285,14 @@ a:hover {
   flex-direction: column;
   gap: 15px;
   text-align: left;
-  width: 100%;
-  height: 100%;
-  padding-top: 15%;
-  padding-left: 20%;
-  padding-right: 20%;
+  width: 50%;
+  margin: 100px auto;
+}
+
+.login_button {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
 }
 
 /* Register page */
@@ -280,11 +301,8 @@ a:hover {
   flex-direction: column;
   gap: 15px;
   text-align: left;
-  width: 100%;
-  height: 100%;
-  padding-top: 15%;
-  padding-left: 20%;
-  padding-right: 20%;
+  width: 50%;
+  margin: 100px auto;
 }
 
 /* Reset page */
@@ -293,18 +311,15 @@ a:hover {
   flex-direction: column;
   gap: 15px;
   text-align: left;
-  width: 100%;
-  height: 100%;
-  padding-top: 15%;
-  padding-left: 20%;
-  padding-right: 20%;
+  width: 50%;
+  width: 50%;
+  margin: 100px auto;
 }
 
 /* Mobile */
 @media (max-width: 800px) {
   #map {
     flex: 1 1 100%;
-    height: calc(100vh - 66px);
   }
 
   #sidebar {

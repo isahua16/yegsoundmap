@@ -50,6 +50,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include "includes/header.php" ?>
+<title>Log In - Edmonton Sound Map</title>
+<meta name="description" content="Log in to your Edmonton Sound Map account to start submitting your field recordings of Edmonton, Canada to the map.">
+</head>
   <body>
     <div class="login_container">    
     <?php include "includes/nav.php" ?>
@@ -65,7 +68,7 @@
             <input type="checkbox" tabindex="3" class="radio" name="remember" id="remember">
             <label for="remember">Stay logged in</label>
         </div>
-        <div>
+        <div class="login_button">
             <input type="submit" name="login-submit" id="login_submit" tabindex="4" class="btn_submit button" value="Log In">
             <a class="link" href="reset_1.php" tabindex="5" class="forgot-password">Forgot Password?</a>
         </div>
