@@ -145,6 +145,9 @@ a:hover {
   opacity: 0;
   flex: 0 0 auto;
 }
+.logo_span h1 {
+  font-size: 36px;
+}
 
 .logo_span.active {
   bottom: 0;
@@ -326,7 +329,7 @@ a:hover {
     display: none;
   }
 
-  h1 {
+  .logo_span h1 {
     font-size: 20px;
   }
 
