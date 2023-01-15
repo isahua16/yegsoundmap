@@ -12,7 +12,7 @@ function set_msg($msg) {
     if(empty('msg')) {
         unset($_SESSION['message']);
     } else {
-        $_SESSION['message']="<h4 class='message'>{$msg}</h4><br>";
+        $_SESSION['message']="<figure class='message_container'><p class='message'>{$msg}</p></figure>";
     }
 }
 

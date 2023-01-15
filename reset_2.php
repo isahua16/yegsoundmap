@@ -52,6 +52,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include "includes/header.php" ?>
+<title>Create A New Password - Edmonton Sound Map</title>
+<meta name="description" content="Create a new password for your Edmonton Sound Map account to continue submitting your field recordings of Edmonton, Canada to the map.">
+<meta name=”robots” content="noindex, follow">
+</head>
     <body>
         <div class="register_container">    
         <?php include "includes/nav.php" ?>
@@ -63,7 +67,7 @@
                 <input type="password" name="password_confirm" id="confirm-password" tabindex="6" class="field" placeholder="Confirm New Password" required>
                 
                 <div class="reset-group">
-                    <input type="submit" name="register-submit" id="reset-submit" tabindex="4" class="btn_reset" value="Reset Password">
+                    <input type="submit" class="button" name="register-submit" id="reset-submit" tabindex="4" class="btn_reset" value="Reset Password">
                 </div>
             </div>
         </form>

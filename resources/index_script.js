@@ -27,6 +27,13 @@ $(document).ready(function () {
   logoSplash = document.querySelector(".logo_splash");
   logoSpan = document.querySelectorAll(".logo_span");
 
+  errorMessage = document.querySelector(".message_container");
+
+  if (errorMessage != null) {
+    document.querySelector("#map").classList.add("error");
+    document.querySelector("#aside_scroll").classList.add("error2");
+  }
+
   setTimeout(() => {
     logoSpan.forEach((span, idx) => {
       setTimeout(() => {
@@ -164,7 +171,7 @@ function myCreateEachMarkerFunction(feature, latlng) {
   btn = `<button style="width:97%;" id="zoomTo` + feature.properties.id;
   btn += `" class="location">`;
   btn += feature.properties.name + `</button>`;
-  $("#sidebar").append(btn);
+  $("#aside_scroll").append(btn);
 
   //Add Zoom buttons for each feature
   $("#zoomTo" + feature.properties.id).click(function () {

@@ -27,6 +27,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include "includes/header.php" ?>
+<title>Reset Your Password - Edmonton Sound Map</title>
+<meta name="description" content="Reset your password for your Edmonton Sound Map account to continue submitting your field recordings of Edmonton, Canada to the map.">
+<meta name=”robots” content="noindex, follow">
+</head>
   <body>
     <div class="login_container">    
     <?php include "includes/nav.php" ?>
@@ -35,7 +39,7 @@
                 <h2> Reset Password </h2>
                 <input type="text" name="username" id="username" tabindex="1" class="field" placeholder="Username" value="" required>
                 <div class="reset_group">    
-                    <input type="submit" name="reset-submit" id="reset_submit" tabindex="4" class="btn_submit" value="Reset password"> 
+                    <input type="submit" class="button" name="reset-submit" id="reset_submit" tabindex="4" class="btn_submit" value="Reset password"> 
                 </div>
             </div>
             </form>

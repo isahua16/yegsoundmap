@@ -9,30 +9,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include "includes/header.php" ?>
+<title>Edmonton Sound Map</title>
+<meta name="description" content="Explore the city of Edmonton, Canada through sound with recordings submitted by the community. Sign up now to contribute your recordings!">
+
+</head>
   <body>
     <?php include "includes/nav.php" ?>
-      <div class="content">
-        <div id="map"></div>
-        <div id="sidebar">
+      <main class="content">
+        <section id="map"></section>
+        <aside id="sidebar">
           <h2 class="title">Locations</h2>
-        </div>
-      </div>
+          <div id="aside_scroll">
+          </div>
+        </aside>
+      </main>
 
 
       <!-- Info modal -->
-      <div id="modal_faq" class="modal">
+      <menu id="modal_faq" class="modal">
         <div class="modal_content_faq">
           <div class="faq_group">
             <button id="btn_close" class="button">close</button>
           </div>
         </div>
-      </div>
+      </menu>
 
       <!-- Splash screen -->
       <div class="intro">
         <h1 class="logo_splash">
           <span class="logo_span"><img class='logo_img_splash' src='media/logo.png' alt='Edmonton Sound Map'/>&nbsp;</span>
-          <span class="logo_span">edmonton&nbsp;sound&nbsp;map</span>
+          <span class="logo_span" style="font-family: 'Montserrat Alternates', sans-serif;">edmonton&nbsp;sound&nbsp;map</span>
         </h1>
       </div>  
       
