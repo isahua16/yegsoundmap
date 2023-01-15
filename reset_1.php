@@ -30,11 +30,6 @@
   <body>
     <div class="login_container">    
     <?php include "includes/nav.php" ?>
-    <div class="message">
-        <?php
-     show_msg();
-        ?>
-    </div>
     <form id="login-form"  method="post" role="form" style="display: block;">
         <div class="reset_form">
                 <h2> Reset Password </h2>

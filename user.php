@@ -15,9 +15,6 @@
 <?php include "includes/header.php" ?>
   <body> 
     <?php include "includes/nav.php" ?>
-    <?php 
-      show_msg();  
-        ?>       
       <div class="content">
         <div id="map"></div>
         <div id="sidebar">
@@ -75,6 +72,8 @@
             </div>
             
             <div class="file_upload">
+              <label for="audio" class="custom_file_upload">
+                <div class="button custom_upload">Upload</div></label>
               <input
               required
               type="file"
@@ -82,13 +81,13 @@
               name="audio"
               accept=".wav, .mp3, .ogg, .m4a"
               />
-              <button class="clear_file">x</button>
+              <button class="clear_file button">x</button>
             </div>
               
               <div id="status"></div>
           </div>
-          <button id="btn_save">Save</button>
-          <button id="btn_cancel">Cancel</button>
+          <button id="btn_save" class="button">Save</button>
+          <button id="btn_cancel" class="button">Cancel</button>
         </div>
       </div>
       
@@ -96,7 +95,7 @@
       <div id="modal_faq" class="modal">
         <div class="modal_content_faq">
           <div class="faq_group">
-            <button id="btn_close">close</button>
+            <button id="btn_close" class="button" >close</button>
           </div>
         </div>
       </div>  

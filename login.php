@@ -53,11 +53,6 @@
   <body>
     <div class="login_container">    
     <?php include "includes/nav.php" ?>
-    <div class="message">
-        <?php
-     show_msg();
-        ?>
-    </div>
 
     <form id="login-form"  method="post" role="form" style="display: block;">
         <div class="login_form">
@@ -71,7 +66,7 @@
             <label for="remember">Stay logged in</label>
         </div>
         <div>
-            <input type="submit" name="login-submit" id="login_submit" tabindex="4" class="btn_submit" value="Log In">
+            <input type="submit" name="login-submit" id="login_submit" tabindex="4" class="btn_submit button" value="Log In">
             <a class="link" href="reset_1.php" tabindex="5" class="forgot-password">Forgot Password?</a>
         </div>
             

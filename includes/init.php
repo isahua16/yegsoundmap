@@ -23,7 +23,6 @@ $register_page = "https://edmontonsoundmap.com/register.php";
 $login_page = "https://edmontonsoundmap.com/login.php";
 
 include "includes/php_functions.php";
-
 ?>
 
 

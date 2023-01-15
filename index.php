@@ -11,10 +11,6 @@
 <?php include "includes/header.php" ?>
   <body>
     <?php include "includes/nav.php" ?>
-    <?php 
-      show_msg();  
-        ?>  
-     
       <div class="content">
         <div id="map"></div>
         <div id="sidebar">
@@ -27,7 +23,7 @@
       <div id="modal_faq" class="modal">
         <div class="modal_content_faq">
           <div class="faq_group">
-            <button id="btn_close">close</button>
+            <button id="btn_close" class="button">close</button>
           </div>
         </div>
       </div>
