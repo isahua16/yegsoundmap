@@ -75,7 +75,7 @@ $(document).ready(function () {
   });
 
   myIconBlack = L.icon({
-    iconUrl: "media/LogoB.png",
+    iconUrl: "media/logob.png",
     iconSize: [25, 25],
   });
 
