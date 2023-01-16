@@ -27,6 +27,7 @@
           </div>
         </aside>
       </main>
+
       <!-- Submission modal  -->
       <menu id="modal_form" class="modal">
         <div class="modal_content_submission">
@@ -74,12 +75,12 @@
                 id="terms"
                 value="1"
               />
-              <label for="terms"> I agree to the <a class="link" href="<?php echo $user_page;?> "target=”_blank”>terms and conditions</a> as set out by the user agreement</label>
+              <label for="terms"> I agree to the <a class="link-underline" href="<?php echo $user_page;?> "target=”_blank”>terms and conditions</a> as set out by the user agreement</label>
             </div>
             
             <div class="file_upload">
               <label for="audio" class="custom_file_upload">
-                <div class="button custom_upload">Upload</div></label>
+                <div id="custom_upload" class="button custom_upload">Upload</div></label>
               <input
               required
               type="file"
@@ -87,7 +88,7 @@
               name="audio"
               accept=".wav, .mp3, .ogg, .m4a"
               />
-              <button class="clear_file button">x</button>
+              <button id="clear_file" class="clear_file button">x</button>
             </div>
               
               <div id="status"></div>

@@ -15,6 +15,7 @@
 
 html {
   height: 100%;
+  touch-action: none;
 }
 
 body {
@@ -26,7 +27,6 @@ body {
 }
 
 /* Header */
-
 .main_nav {
   font-size: 14px;
   display: flex;
@@ -41,15 +41,12 @@ body {
   flex: 0 0 auto;
 }
 
-.message_container {
+.message {
   display: flex;
   min-height: 2rem;
   background-color: #7bc74d;
   justify-content: center;
   align-items: center;
-}
-
-.message {
   font-size: 14px;
   text-align: center;
   color: black;
@@ -75,6 +72,11 @@ body {
   padding: 10px;
   cursor: pointer;
   border-radius: 0.5rem;
+}
+
+.detailed_button {
+  border-color: white;
+  color: white;
 }
 
 .custom_upload {
@@ -145,7 +147,7 @@ a:hover {
   opacity: 0;
   flex: 0 0 auto;
 }
-.logo_span h1 {
+.logo_span {
   font-size: 36px;
 }
 
@@ -226,10 +228,11 @@ a:hover {
 
 /* Popup */
 .popup {
+  width: 100%;
 }
 
 .audio {
-  display: block;
+  width: 100%;
 }
 
 /* Modals */

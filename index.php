@@ -38,7 +38,7 @@
       <div class="intro">
         <h1 class="logo_splash">
           <span class="logo_span"><img class='logo_img_splash' src='media/logo.png' alt='Edmonton Sound Map'/>&nbsp;</span>
-          <span class="logo_span" style="font-family: 'Montserrat Alternates', sans-serif;"><h1>edmonton&nbsp;sound&nbsp;map</h1></span>
+          <span class="logo_span" style="font-family: 'Montserrat Alternates', sans-serif;">edmonton&nbsp;sound&nbsp;map</span>
         </h1>
       </div> 
       <script src="resources/index_script.js"></script>
