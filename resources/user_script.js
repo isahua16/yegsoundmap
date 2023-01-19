@@ -20,7 +20,9 @@ let corner1,
   geocoder,
   faqBtn,
   sidebarBtn,
-  errorMessage;
+  errorMessage,
+  fileName,
+  uploadButton;
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -157,6 +159,17 @@ $(window).on("resize", function () {
     sidebarBtn.enable();
   }
 });
+
+// Add the file name before upload
+fileName = document.getElementById("file_name");
+
+uploadButton = document.getElementById("audio");
+
+uploadButton.onchange = () => {
+  console.log("hello");
+  fileName.textContent = uploadButton.files[0].name;
+};
+
 //Adds an event listener to close the FAQ modal
 $("#btn_close").click(function () {
   $("#modal_faq").hide();
@@ -245,15 +258,9 @@ function sendDataToServer() {
   }
 }
 
-function clearFileUpload(event) {
-  event.preventDefault();
-  $("#audio").replaceWith(`<input
-  required
-  type="file"
-  id="audio"
-  name="audio"
-  accept=".wav, .mp3, .ogg, .m4a"
-  />`);
+function clearFileUpload() {
+  $("#audio").val("");
+  fileName.textContent = "";
 }
 
 // Hide modal form on cancel button click
@@ -262,7 +269,7 @@ function cancelBtnFunction() {
   $("#description").val("");
   $("#status").html("");
   $("#date").val("");
-  clearFileUpload(event);
+  clearFileUpload();
 }
 
 //Modal popup on geocoding result

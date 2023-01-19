@@ -89,11 +89,11 @@ if (logged_in()) {
               />
               <button id="clear_file" class="clear_file button">x</button>
             </div>
-              
-              <div id="status"></div>
+            <div id="file_name"></div>
           </div>
           <button id="btn_save" class="button">Save</button>
           <button id="btn_cancel" class="button">Cancel</button>
+          <div id="status"></div>
         </div>
       </menu>
       
