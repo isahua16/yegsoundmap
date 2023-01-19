@@ -87,6 +87,11 @@ input[type="file"] {
   display: none;
 }
 
+#file_name {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 input {
   font-size: 16px;
 }
