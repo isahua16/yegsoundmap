@@ -51,10 +51,10 @@
 
       <!-- Splash screen -->
       <div class="intro">
-        <h1 class="logo_splash">
+        <div class="logo_splash">
           <span class="logo_span"><img class='logo_img_splash' src='media/logo.png' alt='Edmonton Sound Map'/>&nbsp;</span>
-          <span class="logo_span" style="font-family: 'Montserrat Alternates', sans-serif;">edmonton&nbsp;sound&nbsp;map</span>
-        </h1>
+          <span class="logo_span logo_span_text" style="font-family: 'Montserrat Alternates', sans-serif;">edmonton&nbsp;sound&nbsp;map</span>
+        </div>
       </div> 
       <script src="resources/index_script.js"></script>
   </body>
