@@ -105,8 +105,8 @@ if (logged_in()) {
             <p>Edmonton sound map is a non-profit community initiative by local sound artists Isael Huard and Chris Szott. </p>
             <h3>Mission</h3>
             <p>The documentation and preservation of the aural identity of Edmonton through community contribution and collaboration.</p>
-            <h3>Contribute</h3>
-            <p>In order to contribute your own recordings, you must register as a user and activate your account by email, as well as agree to the user agreement.</p>
+            <h3>Instructions</h3>
+            <p>To submit a recording, right-click on the map at the location where the recording was made. On mobile, click and hold to get prompted with the submission form.</p>
             <h3>Technical requirements</h3>
             <p>Submit your recordings as .wav, .m4a, mp3 or .ogg files of 50 megabytes or less. Submissions judged to be of too poor quality (audio distortion, undistinguishable content, poor levels or overpowering handling noise) will be removed without warning. Recordings made with your phone, if carefully recorded, are welcome. We do not seek perfection. If in doubt, compare your recordings to others on the map.</p>
             <h3>Contact</h3>
