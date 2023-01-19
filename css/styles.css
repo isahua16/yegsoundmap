@@ -358,13 +358,14 @@ a:hover {
   }
 
   .logo_img_splash {
-    width: 48px;
-    height: 48px;
+    width: 48px !important;
+    height: 48px !important;
   }
   .logo_span_text {
-    font-size: 18px;
+    font-size: 18px !important;
   }
+
   .logo_splash {
-    gap: 16px;
+    gap: 16px !important;
   }
 }
