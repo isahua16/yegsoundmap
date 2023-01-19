@@ -359,13 +359,10 @@ a:hover {
   margin: 100px auto;
 }
 
-<<<<<<< Updated upstream
-=======
 .socials_wrapper a {
   text-decoration: none;
 }
 
->>>>>>> Stashed changes
 /* Mobile */
 @media (max-width: 800px) {
   #map {
