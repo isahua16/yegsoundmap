@@ -113,7 +113,7 @@
             
             <div class="agreement">
                 <input type="checkbox" name="terms" id="terms" class="field" value="1" required>
-                <label for="terms"> I agree to the <a class="link-underline" href="<?php echo $user_page;?> "target=”_blank”>terms and conditions</a> as set out by the user agreement</label>
+                <label for="terms"> I agree to the <a class="link-underline" href="https://docs.google.com/document/d/e/2PACX-1vSLD-abiEGpW679YSNpSKAqjBdLkiJC_6VXg3AkLi91MWujVz-KE1o3a89ILni-21vDum7-bDeYscIK/pub "target=”_blank”>terms and conditions</a> as set out by the user agreement</label>
             </div>
             <div>
                 <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="btn_register button" value="Register Now">                     
