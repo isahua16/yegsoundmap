@@ -51,6 +51,7 @@ function logged_in() {
     } else {
         if (isset($_COOKIE['username'])) {
             $username = $_COOKIE['username'];
+            $_SESSION['username'] = $_COOKIE['username'];
             return true;
         } else {
             return false;

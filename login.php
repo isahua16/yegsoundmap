@@ -1,7 +1,6 @@
 <!-- Login to access user.php, reroute to user.php when user is logged in -->
 
 <?php include "includes/init.php" ?>
-
 <?php
     if ($_SERVER['REQUEST_METHOD']=='POST') {
     $username=$_POST['username'];
@@ -11,15 +10,13 @@
     } else {
         $remember = "off";
     }
-
-
     if (count_field_val($pdo, "users", "username", $username)>0) {
         
         $user_data = return_field_data($pdo, "users", "username", $username);
         if ($user_data['active']==1) {
             if (password_verify($password, $user_data['password'])) {
                 set_msg("Logged in succesfully");
-                $_SESSION['username']=$username;
+                $_SESSION['username'] = $username;
                 if ($remember="on") {
                     setcookie("username", $username, time()+86400*7);
                 } else {
@@ -37,16 +34,11 @@
     } else {
         set_msg("User {$username} does not exist. Please register");
     }
-
-
     } else {
         $username = "";
         $password= "";
     }
-
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <?php include "includes/header.php" ?>

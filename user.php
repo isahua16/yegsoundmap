@@ -1,15 +1,14 @@
-<!-- For signed in users only, need to be signed in to access this page which has the contribute functionalities -->
 
 <?php include "includes/init.php" ?>
 
 <?php 
-  if(logged_in()) {
-    $username = $_SESSION['username'];
-  } else {  
-      redirect('index.php');    
-  }
-
+if (logged_in()) {
+  $username = $_SESSION['username'];
+} else {
+  redirect('index.php');
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <?php include "includes/header.php" ?>
@@ -27,6 +26,7 @@
           </div>
         </aside>
       </main>
+
       <!-- Submission modal  -->
       <menu id="modal_form" class="modal">
         <div class="modal_content_submission">
@@ -38,7 +38,7 @@
               type="text"
               class="field"
               id="user"
-              value="<?php echo $username ?>"
+              value="<?php echo $username; ?>"
             />          
           <label for="name">Location</label> 
           <input
@@ -74,12 +74,12 @@
                 id="terms"
                 value="1"
               />
-              <label for="terms"> I agree to the <a class="link" href="<?php echo $user_page;?> "target=”_blank”>terms and conditions</a> as set out by the user agreement</label>
+              <label for="terms"> I agree to the <a class="link-underline" href="https://docs.google.com/document/d/e/2PACX-1vSLD-abiEGpW679YSNpSKAqjBdLkiJC_6VXg3AkLi91MWujVz-KE1o3a89ILni-21vDum7-bDeYscIK/pub "target=”_blank”>terms and conditions</a> as set out by the user agreement</label>
             </div>
             
             <div class="file_upload">
               <label for="audio" class="custom_file_upload">
-                <div class="button custom_upload">Upload</div></label>
+                <div id="custom_upload" class="button custom_upload">Upload</div></label>
               <input
               required
               type="file"
@@ -87,7 +87,7 @@
               name="audio"
               accept=".wav, .mp3, .ogg, .m4a"
               />
-              <button class="clear_file button">x</button>
+              <button id="clear_file" class="clear_file button">x</button>
             </div>
               
               <div id="status"></div>
@@ -98,13 +98,29 @@
       </menu>
       
       <!-- Info modal -->
-      <div id="modal_faq" class="modal">
+      <menu id="modal_faq" class="modal">
         <div class="modal_content_faq">
+          <button id="btn_close" class="button">close</button></br>
           <div class="faq_group">
-            <button id="btn_close" class="button" >close</button>
+            <p>Edmonton sound map is a non-profit community initiative by local sound artists Isael Huard and Chris Szott. </p>
+            <h3>Mission</h3>
+            <p>The documentation and preservation of the aural identity of Edmonton through community contribution and collaboration.</p>
+            <h3>Contribute</h3>
+            <p>In order to contribute your own recordings, you must register as a user and activate your account by email, as well as agree to the user agreement.</p>
+            <h3>Technical requirements</h3>
+            <p>Submit your recordings as .wav, .m4a, mp3 or .ogg files of 50 megabytes or less. Submissions judged to be of too poor quality (audio distortion, undistinguishable content, poor levels or overpowering handling noise) will be removed without warning. Recordings made with your phone, if carefully recorded, are welcome. We do not seek perfection. If in doubt, compare your recordings to others on the map.</p>
+            <h3>Contact</h3>
+            <p>If you wish to submit feedback or bugs you encounter with the website, as well as inquire about this initiative, please send an email at isaelhuard@gmail.com.</p>
+            <h3>User agreement</h3>
+            <p>You can review the user agreement <a href="https://docs.google.com/document/d/e/2PACX-1vSLD-abiEGpW679YSNpSKAqjBdLkiJC_6VXg3AkLi91MWujVz-KE1o3a89ILni-21vDum7-bDeYscIK/pub" target="_blank">here</a>.</p>
+            <h3>Credits</h3>
+            <ul id="credits">
+              <li>Web development and design by Isael Huard</li>
+              <li>Graphic design by Mason Beck</li>
+            </ul>
           </div>
         </div>
-      </div>  
+      </menu>
       <script src="resources/user_script.js"></script>
   </body>
 </html>

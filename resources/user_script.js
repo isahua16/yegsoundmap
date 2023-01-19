@@ -10,6 +10,7 @@ let corner1,
   baseMaps,
   layerControl,
   myIcon,
+  myIconBlack,
   geojsonLayer,
   pop,
   btn,
@@ -25,8 +26,9 @@ let corner1,
 
 //Waits until all html and css before running the code
 $(document).ready(function () {
-  errorMessage = document.querySelector(".message_container");
+  errorMessage = document.querySelector(".message");
 
+  // Responsive height to accommodate error messages
   if (errorMessage != null) {
     document.querySelector("#map").classList.add("error");
     document.querySelector("#aside_scroll").classList.add("error2");
@@ -50,7 +52,7 @@ $(document).ready(function () {
       minZoom: 11,
     }
   );
-
+  //Open Street Map layer
   osmLayer = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     minZoom: 11,
   });
@@ -69,6 +71,11 @@ $(document).ready(function () {
   //Marker Icon
   myIcon = L.icon({
     iconUrl: "media/logo.png",
+    iconSize: [25, 25],
+  });
+
+  myIconBlack = L.icon({
+    iconUrl: "media/logob.png",
     iconSize: [25, 25],
   });
 
@@ -111,6 +118,34 @@ $(document).ready(function () {
   } else {
     sidebarBtn.enable();
   }
+
+  //Change Icons based on current baselayer as well as change button colors for better contrast
+  map.on("baselayerchange", function (e) {
+    if (e.name === "Detailed") {
+      document.querySelector("#btn_save").classList.add("detailed_button");
+      document.querySelector("#btn_cancel").classList.add("detailed_button");
+      document.querySelector("#clear_file").classList.add("detailed_button");
+      document.querySelector("#custom_upload").classList.add("detailed_button");
+
+      map.eachLayer(function (layer) {
+        if (layer instanceof L.Marker) {
+          layer.setIcon(myIconBlack);
+        }
+      });
+    } else if (e.name === "Default") {
+      document.querySelector("#btn_save").classList.remove("detailed_button");
+      document.querySelector("#btn_cancel").classList.remove("detailed_button");
+      document.querySelector("#clear_file").classList.remove("detailed_button");
+      document
+        .querySelector("#custom_upload")
+        .classList.remove("detailed_button");
+      map.eachLayer(function (layer) {
+        if (layer instanceof L.Marker) {
+          layer.setIcon(myIcon);
+        }
+      });
+    }
+  });
 });
 
 //Checks screen resize events and updates the sidebar button accordingly
