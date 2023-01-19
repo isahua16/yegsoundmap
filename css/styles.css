@@ -310,6 +310,18 @@ a:hover {
   margin-bottom: 16px;
 }
 
+.socials_wrapper {
+  display: flex;
+  /* justify-content: center;
+    align-items: center; */
+  gap: 16px;
+}
+
+.fa-brands {
+  stroke: white;
+  fill: white;
+}
+
 /* Login page */
 .login_form {
   display: flex;
@@ -347,6 +359,13 @@ a:hover {
   margin: 100px auto;
 }
 
+<<<<<<< Updated upstream
+=======
+.socials_wrapper a {
+  text-decoration: none;
+}
+
+>>>>>>> Stashed changes
 /* Mobile */
 @media (max-width: 800px) {
   #map {

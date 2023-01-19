@@ -119,6 +119,11 @@ if (logged_in()) {
               <li>Graphic design by Mason Beck</li>
             </ul>
           </div>
+          <div class="socials_wrapper">
+              <a href="https://www.instagram.com/yegsoundmap/" class="fa-brands fa-instagram"></a>
+              <a href="https://twitter.com/YEGsoundmap" class="fa-brands fa-twitter"></a>
+              <a href="#" class="fa-brands fa-discord"></a>
+            </div>
         </div>
       </menu>
       <script src="resources/user_script.js"></script>

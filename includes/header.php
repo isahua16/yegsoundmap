@@ -39,6 +39,9 @@
     <script src="resources/easy-button.js">
       </script>
 
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/c653e38d5c.js" crossorigin="anonymous"></script>
+
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&family=Montserrat+Alternates:wght@300;400&display=swap" rel="stylesheet">
 
