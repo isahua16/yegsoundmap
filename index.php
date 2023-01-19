@@ -10,7 +10,7 @@
 <html lang="en">
 <?php include "includes/header.php" ?>
 <title>Edmonton Sound Map</title>
-<meta name="description" content="Explore the city of Edmonton, Canada through sound with recordings submitted by the community. Sign up now to contribute your recordings!">
+<meta name="description" content="Welcome to the Edmonton Sound Map! Explore the city of Edmonton through sound submitted by the community. Sign up now to contribute your recordings!">
 
 </head>
   <body>
