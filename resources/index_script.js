@@ -78,7 +78,7 @@ $(document).ready(function () {
   //Marker Icon
   myIcon = L.icon({
     iconUrl: "media/logo.png",
-    iconSize: [25, 25],
+    iconSize: [20, 20],
   });
 
   //create geocoding search bar

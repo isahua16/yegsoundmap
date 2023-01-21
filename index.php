@@ -36,9 +36,9 @@
             <h3>Contribute</h3>
             <p>In order to contribute your own recordings, you must register as a user and activate your account by email, as well as agree to the user agreement.</p>
             <h3>Technical requirements</h3>
-            <p>Submit your recordings as .wav, .m4a, mp3 or .ogg files of 50 megabytes or less. Submissions judged to be of too poor quality (audio distortion, undistinguishable content, poor levels or overpowering handling noise) will be removed without warning. Recordings made with your phone, if carefully recorded, are welcome. We do not seek perfection. If in doubt, compare your recordings to others on the map.</p>
+            <p>Submit your recordings as .wav, .m4a, .mp3 or .ogg files of 50 megabytes or less. Submissions judged to be of too poor quality (audio distortion, undistinguishable content, poor levels or overpowering handling noise) will be removed without warning. Recordings made with your phone, if carefully recorded, are welcome. We do not seek perfection. If in doubt, compare your recordings to others on the map.</p>
             <h3>Contact</h3>
-            <p>If you wish to submit feedback or bugs you encounter with the website, as well as inquire about this initiative, please send an email at isaelhuard@gmail.com.</p>
+            <p>If you wish to submit feedback or bugs you encounter with the website, as well as inquire about this initiative, please send an email to isaelhuard@gmail.com.</p>
             <h3>User agreement</h3>
             <p>You can review the user agreement <a href="https://docs.google.com/document/d/e/2PACX-1vSLD-abiEGpW679YSNpSKAqjBdLkiJC_6VXg3AkLi91MWujVz-KE1o3a89ILni-21vDum7-bDeYscIK/pub" target="_blank">here</a>.</p>
             <h3>Credits</h3>
@@ -47,9 +47,8 @@
               <li>Graphic design by Mason Beck</li>
             </ul>
             <div class="socials_wrapper">
-              <a href="https://www.instagram.com/yegsoundmap/" class="fa-brands fa-instagram"></a>
-              <a href="https://twitter.com/YEGsoundmap" class="fa-brands fa-twitter"></a>
-              <a href="#" class="fa-brands fa-discord"></a>
+              <a href="https://www.instagram.com/yegsoundmap/" target="_blank" class="fa-brands fa-instagram"></a>
+              <a href="https://twitter.com/YEGsoundmap" target="_blank" class="fa-brands fa-twitter"></a>
             </div>
           </div>
       </menu>
