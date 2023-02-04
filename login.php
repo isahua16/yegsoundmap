@@ -1,5 +1,3 @@
-<!-- Login to access user.php, reroute to user.php when user is logged in -->
-
 <?php include "includes/init.php" ?>
 <?php
     if ($_SERVER['REQUEST_METHOD']=='POST') {
